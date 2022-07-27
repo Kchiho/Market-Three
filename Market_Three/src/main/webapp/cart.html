@@ -20,16 +20,25 @@
 	align-content: stretch;
 	}
 	.flex-box1{
+	margin-left: 20px;
+	margin-top: 20px;
+	padding-top: 20px;
 	}
 	.flex-box2{
 	width: 200px;
+	margin-left: 20px;
 	}
 	#floatMenu {
 		margin: 5px;
+		padding: 10px;
 		position: absolute;
 		right: 30px;
 		top: 30px;
-		}	
+		background-color: #d2d2d2;
+		}
+	.h2Title{
+		text-align: center;
+	}
 </style>
 <script>
 $(document).ready(function() {
@@ -48,7 +57,10 @@ $(document).ready(function() {
 <body>
 <div style="height:1000px" class="flex-container">
 <div class="flex-box1">
+	<div class="h2Title">
 	<h2>장바구니</h2>
+	<hr>
+	</div>
 	<div>
 		<div class="cartBox1">
 			<label>
@@ -59,7 +71,9 @@ $(document).ready(function() {
 		</div>
 	</div>
 	<div>
-		<p class="">장바구니에 담긴 상품이 없습니다.</p>
+	<table>
+		<td><p class="">장바구니에 담긴 상품이 없습니다.</p></td>
+	</table>
 	</div>
 	<div>
 		<div class="cartBox2">
@@ -83,18 +97,18 @@ $(document).ready(function() {
 	<div>
 		<div>
 			<span>상품금액</span>
-			<span>...</span>
+			<span> </span>
 		</div>
 		<div>
 			<span>상품할인금액</span>
-			<span>...</span>
+			<span> </span>
 		</div>
 		<div>
 			<span>배송비</span>
-			<span>...</span>
+			<span> </span>
 		<div>
 			<span>결제예정금액</span>
-			<span>...</span>
+			<span> </span>
 		</div>
 		</div>
 		<div>
