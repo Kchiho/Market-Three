@@ -58,7 +58,7 @@
 	width: 560px;
 }
 
-.h1 {
+.list {
 	display: -webkit-box;
 	display: -webkit-flex;
 	display: -ms-flexbox;
@@ -81,7 +81,16 @@
 	letter-spacing: -0.5px;
 }
 
-.h11 {
+.term {
+	position: relative;
+	top: 1px;
+	width: 128px;
+	height: 100%;
+	color: #666;
+	line-height: 19px;
+}
+
+.description {
 	display: -webkit-box;
 	display: -webkit-flex;
 	display: -ms-flexbox;
@@ -94,7 +103,7 @@
 	flex-direction: column;
 }
 
-.h111 {
+.description-1 {
 	color: #333;
 	line-height: 19px;
 	white-space: pre-line;
@@ -102,7 +111,7 @@
 	overflow: hidden;
 }
 
-.h1111 {
+.description-2 {
 	display: block;
 	font-size: 12px;
 	color: #666;
@@ -111,16 +120,7 @@
 	white-space: pre-line;
 }
 
-.h11111 {
-	position: relative;
-	top: 1px;
-	width: 128px;
-	height: 100%;
-	color: #666;
-	line-height: 19px;
-}
-
-.h21 {
+.menu-1 {
 	display: flex;
 	flex: 1 1 0%;
 	flex-direction: row;
@@ -172,7 +172,7 @@
 	vertical-align: top;
 }
 
-.h22 {
+.menu-2 {
 	display: -webkit-box;
 	display: -webkit-flex;
 	display: -ms-flexbox;
@@ -187,7 +187,7 @@
 	align-items: flex-end;
 }
 
-.h23 {
+.menu-3 {
 	display: -webkit-box;
 	display: -webkit-flex;
 	display: -ms-flexbox;
@@ -199,7 +199,7 @@
 	padding-top: 10px;
 }
 
-.h24 {
+.menu-4 {
 	display: -webkit-box;
 	display: -webkit-flex;
 	display: -ms-flexbox;
@@ -296,8 +296,8 @@
 	color: #333;
 	vertical-align: top;
 }
-
-.h3 {
+/*
+.navi {
 	display: -webkit-box;
 	display: -webkit-flex;
 	display: -ms-flexbox;
@@ -309,7 +309,7 @@
 	height: 60px;
 }
 
-.h31, .h32, .h33, .h34 {
+.navi-1, .navi-2, .navi-3, .navi-4 {
 	display: -webkit-box;
 	display: -webkit-flex;
 	display: -ms-flexbox;
@@ -327,6 +327,7 @@
 	align-items: center;
 	height: 100%;
 }
+*/
 </style>
 </head>
 <body>
@@ -346,62 +347,62 @@
 				</div>
 				<!-- 상품 상세정보 -->
 				<div>
-					<dl class="h1">
-						<dt class="h11111">배송</dt>
-						<dd class="h11">
-							<p class="h111">샛별배송</p>
-							<p class="h1111">23시 전 주문 시 내일 아침 7시 전 도착 (대구.부산.울산 샛별배송 운영시간
-								별도 확인)</p>
+					<dl class="list">
+						<dt class="term">배송</dt>
+						<dd class="description">
+							<p class="description-1">샛별배송</p>
+							<p class="description-2">23시 전 주문 시 내일 아침 7시 전 도착 (대구.부산.울산
+								샛별배송 운영시간 별도 확인)</p>
 						</dd>
 					</dl>
-					<dl class="h1">
-						<dt class="h11111">판매자</dt>
-						<dd class="h11">
-							<p class="h111">컬리</p>
+					<dl class="list">
+						<dt class="term">판매자</dt>
+						<dd class="description">
+							<p class="description-1">컬리</p>
 						</dd>
 					</dl>
-					<dl class="h1">
-						<dt class="h11111">포장타입</dt>
-						<dd class="h11">
-							<p class="h111">냉동 (종이포장)</p>
+					<dl class="list">
+						<dt class="term">포장타입</dt>
+						<dd class="description">
+							<p class="description-1">냉동 (종이포장)</p>
 							<p>택배배송은 에코 포장이 스티로폼으로 대체됩니다</p>
 						</dd>
 					</dl>
-					<dl class="h1">
-						<dt class="h11111">판매단위</dt>
-						<dd class="h11">
-							<p class="h111">1개</p>
+					<dl class="list">
+						<dt class="term">판매단위</dt>
+						<dd class="description">
+							<p class="description-1">1개</p>
 						</dd>
 					</dl>
-					<dl class="h1">
-						<dt class="h11111">중량/용량</dt>
-						<dd class="h11">
-							<p class="h111">460g (돈까스360g, 소스100g)</p>
+					<dl class="list">
+						<dt class="term">중량/용량</dt>
+						<dd class="description">
+							<p class="description-1">460g (돈까스360g, 소스100g)</p>
 							<p>23시 전 주문 시 내일 아침 7시 전 도착 (대구.부산.울산 샛별배송 운영시간 별도 확인)</p>
 						</dd>
 					</dl>
-					<dl class="h1">
-						<dt class="h11111">알레르기정보</dt>
-						<dd class="h11">
-							<p class="h111">"- 돈까스: 우유, 대두, 밀, 계란, 돼지고기 함유 / 계란, 우유, 메밀,
-								땅콩, 대두, 밀, 고들어, 게, 새우, 돼지고기, 쇠고기, 닭고기, 복숭아, 토마토와 같은 시설에서 제조 -
-								애플브라운 소스: 난류, 우유, 대두, 밀, 토마토, 쇠고기, 조개류(굴) 함유 / 땅콩, 고등어, 새우,
+					<dl class="list">
+						<dt class="term">알레르기정보</dt>
+						<dd class="description">
+							<p class="description-1">"- 돈까스: 우유, 대두, 밀, 계란, 돼지고기 함유 / 계란,
+								우유, 메밀, 땅콩, 대두, 밀, 고들어, 게, 새우, 돼지고기, 쇠고기, 닭고기, 복숭아, 토마토와 같은 시설에서
+								제조 - 애플브라운 소스: 난류, 우유, 대두, 밀, 토마토, 쇠고기, 조개류(굴) 함유 / 땅콩, 고등어, 새우,
 								돼지고기, 아황산류, 닭고기, 오징어,조개류(홍합)과 같은 시설에서 제조 - 치폴레핑크 소스: 난류, 우유, 대두,
 								밀, 토마토, 이산화항 함유 / 땅콩, 고등어, 새우, 돼지고기, 닭고기, 쇠고기, 오징어, 조개류와 같은 시설에서
 								제조"</p>
 						</dd>
 					</dl>
-					<dl class="h1">
-						<dt class="h11111">안내사항</dt>
-						<dd class="h11">
-							<p class="h111">"- 간혹 육색이 붉은 색을 띄는 것은 핑킹현상으로, 덜 익은 것이 아니니
-								안심하고 섭취하셔도 됩니다."</p>
+					<dl class="list">
+						<dt class="term">안내사항</dt>
+						<dd class="description">
+							<p class="description-1">"- 간혹 육색이 붉은 색을 띄는 것은 핑킹현상으로, 덜 익은
+								것이 아니니 안심하고 섭취하셔도 됩니다."</p>
 						</dd>
 					</dl>
 				</div>
-				<div class="h2">
+				<div class="menu">
 					<!-- 구매수량 -->
-					<div class="h21">
+					<div class="menu-1">
 						<dl>
 							<dt>구매수량</dt>
 							<dd>
@@ -412,14 +413,14 @@
 						</dl>
 					</div>
 					<!-- 상품가격 -->
-					<div class="h22">
+					<div class="menu-2">
 						<span>총 상품금액</span> <span>7632</span> <span>원</span>
 					</div>
-					<div class="h23">
+					<div class="menu-3">
 						<span>적립</span> <span>로그인 후, 할인 및 적립 혜택 제공</span>
 					</div>
 					<!-- 장바구니 담기 -->
-					<div class="h24">
+					<div class="menu-4">
 						<button class="heart">
 							<span class="heart1"> <img alt="heart"
 								src="images/heart.svg">
@@ -435,21 +436,23 @@
 			</div>
 		</div>
 	</div>
+	<!-- 
 	<div>
-		<nav class="h3">
-			<div class="h31">
+		<nav class="navi">
+			<div class="navi-1">
 				<a>상세설명</a>
 			</div>
-			<div class="h32">
+			<div class="navi-2">
 				<a>상세정보</a>
 			</div>
-			<div class="h33">
+			<div class="navi-3">
 				<a>후기</a>
 			</div>
-			<div class="h34">
+			<div class="navi-4">
 				<a>문의</a>
 			</div>
 		</nav>
 	</div>
+	 -->
 </body>
 </html>
