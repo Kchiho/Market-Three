@@ -3,6 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"
+	integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+	crossorigin="anonymous"></script>
 <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
 <!-- Bootstrap icons-->
 <link
@@ -25,13 +28,54 @@
 	width: 150px;
 	height: 150px;
 }
-.lj{
+
+.lj {
 	margin-right: 10px;
+}
+
+.flex-container {
+	display: flex;
+	max-width: 1050px;
+	height: 50px;
+	margin: auto;
+	align-items: center;
+}
+
+.flex-item {flex-basis;
+	width: 130px;
+	height: 40px;
+	padding: 10px;
+}
+
+.flex-item-f {flex-basis;
+	width: 200px;
+	height: 40px;
+	padding: 10px;
+}
+
+.listtitle {
+	cursor: pointer;
+}
+
+.listtitle>ul {
+	list-style: none;
+	padding-left: 0px;
+	display: none;
 }
 </style>
 
 </head>
 <body>
+	<script>
+		$(document).ready(function() {
+			$("listtitle").click(function() {
+				$(this).next().slideToggle();
+			});
+		})
+	</script>
+
+
+	<!-- 네이게이션바 -->
 	<nav class="navbar navbar-expand-lg navbar-light bg-light">
 		<div class="container px-4 px-lg-5">
 			<a class="navbar-brand" href="#!">Market Three</a>
@@ -46,10 +90,14 @@
 					<li class="nav-item"><a class="nav-link active"
 						aria-current="page" href="#!">Home</a></li>
 					<li class="nav-item"><a class="nav-link" href="#!">About</a></li>
-					
+
 				</ul>
-				<div class="lj"><a href="#">Login</a></div>
-				<div class="lj"><a href="#">Join</a></div>
+				<div class="lj">
+					<a href="#">Login</a>
+				</div>
+				<div class="lj">
+					<a href="#">Join</a>
+				</div>
 				<form class="d-flex">
 					<button class="btn btn-outline-dark" type="submit">
 						<i class="bi-cart-fill me-1"></i> Cart <span
@@ -61,10 +109,24 @@
 	</nav>
 	<!-- Header-->
 	<div id="header">
-		<div>
-			<div id="logo">
-				<img id="main" src="images/logoBk.png" alt="마켓트리 로고">
+		<div id="logo">
+			<img id="main" src="images/logoBk.png" alt="마켓트리 로고">
+		</div>
+		<div class="flex-container">
+			<div class="flex-item-f">
+				<div class="listtitle">
+					전체카테고리
+					<ul>
+						<li>과일</li>
+						<li>채소</li>
+						<li>정육</li>
+						<li>건강식품</li>
+					</ul>
+				</div>
 			</div>
+			<div class="flex-item">신상품</div>
+			<div class="flex-item">베스트</div>
+			<div class="flex-item">추천상품</div>
 		</div>
 	</div>
 </body>
