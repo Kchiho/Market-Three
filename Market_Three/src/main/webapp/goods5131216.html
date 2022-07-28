@@ -331,8 +331,18 @@
 }
 */
 </style>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"
+	integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+	crossorigin="anonymous"></script>
 </head>
 <body>
+	<script type="text/javascript">
+		$(document).ready(function() {
+			$("#header").load("header.html");
+			$("#footer").load("footer.html");
+		});
+	</script>
+	<div id="header"></div>
 	<div class="body">
 		<div class="content">
 			<div class="img"></div>
@@ -438,6 +448,7 @@
 			</div>
 		</div>
 	</div>
+	<div id="footer"></div>
 	<!-- 
 	<div>
 		<nav class="navi">
