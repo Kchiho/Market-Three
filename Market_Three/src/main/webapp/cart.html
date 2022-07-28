@@ -27,17 +27,30 @@
 	.flex-box2{
 	width: 200px;
 	margin-left: 20px;
+	border: 1px solid rgba(0, 0, 0, 0.125);
 	}
 	#floatMenu {
-		margin: 5px;
-		padding: 10px;
 		position: absolute;
 		right: 30px;
 		top: 30px;
-		background-color: #d2d2d2;
 		}
 	.h2Title{
 		text-align: center;
+	}
+	.flex-box2-2{
+		background-color: #d2d2d2;
+	}
+	.boxInText{
+		margin: 5px;
+		padding: 10px;
+	}
+	.warningText{
+		font-size: 11px;
+		margin-right: 5px;
+	}
+	li{
+		list-style: none;
+		padding-left: 0px;
 	}
 </style>
 <script>
@@ -58,7 +71,7 @@ $(document).ready(function() {
 <div style="height:1000px" class="flex-container">
 <div class="flex-box1">
 	<div class="h2Title">
-	<h2>장바구니</h2>
+	<h1>장바구니</h1>
 	<hr>
 	</div>
 	<div>
@@ -74,6 +87,7 @@ $(document).ready(function() {
 	<table>
 		<td><p class="">장바구니에 담긴 상품이 없습니다.</p></td>
 	</table>
+	<hr>
 	</div>
 	<div>
 		<div class="cartBox2">
@@ -87,40 +101,49 @@ $(document).ready(function() {
 </div>
 
 <div class="flex-box2" id="floatMenu">
-	<div>
+	<div class="flex-box2-1">
+			<div class="boxInText">
 		<h3>배송지</h3>
 			<div>
 				<p>배송지를 등록하고<br>구매 가능한 상품을 확인하세요!</p>
 				<button><span>주소검색</span></button>
 			</div>
+			</div>
 	</div>
-	<div>
+	<div class="flex-box2-2">
+		<div class="boxInText">
 		<div>
 			<span>상품금액</span>
-			<span> </span>
+			<span></span>
 		</div>
 		<div>
 			<span>상품할인금액</span>
-			<span> </span>
+			<span></span>
 		</div>
 		<div>
 			<span>배송비</span>
-			<span> </span>
+			<span></span>
+			<br><br>
 		<div>
 			<span>결제예정금액</span>
-			<span> </span>
+			<span></span>
 		</div>
 		</div>
-		<div>
+		</div>
+		</div>
+		<div class="flex-box2-3">
+			<div class="boxInText">
 			<button type="button"><span>상품을 담아주세요</span></button>
+			</div>
+				<div class="warningText">
 			<ul>
 				<li>[주문완료] 상태일 경우에만 주문 취소 가능합니다.<br></li>
 				<li>[마이컬리> 주문내역 상세페이지] 에서 직접 취소하실 수 있습니다.<br></li>
 			</ul>
+				</div>
+			</div>
 		</div>
 	</div>
-</div>
-</div>
 
 
 </body>
