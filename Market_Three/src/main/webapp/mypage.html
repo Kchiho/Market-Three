@@ -16,7 +16,6 @@
 	#content{ /*컨텐츠 전체*/
 		width: auto;
 		height: auto;
-		min-width: 1050px;
 		max-width: 1050px;
 		background-color: white;
 		padding: 10px;
@@ -24,7 +23,7 @@
 	}
 	.topcontent{ /*상단컨텐츠*/
 		width: auto;
-		height: 230px;
+		height: auto;
 		border: 5px solid white;
 		background-color: rgb(235, 235, 235);
 		display: flex;
@@ -33,16 +32,19 @@
 		flex-wrap: wrap;
 	}
 	.main{
-		width: 350px;
+		flex-grow: 1;
+		min-width: 170px;
+		max-width: 400px;
 		height: 150px;
 		background-color: white;
 		border: 0.5px dotted black;
 	}
 	.side{
-		width: 160px;
+		width: 150px;
 		height: 150px;
 		background-color: white;
 		border: 0.5px dotted black;
+		flex-shrink: 0;
 	}
 	.mainbox{
 		margin: 30px;
@@ -55,6 +57,7 @@
 		width: auto;
 		height: 50px;
 		cursor: pointer;
+		fontsize: 17;
 	}
 	.infocontent{
 		position: relative;
@@ -62,7 +65,8 @@
 		height: 50px;
 	}
 	.blurb{ /*광고*/
-		width: 1030px;
+		width: auto;
+		min-width: 800px;
 		height: 60px;
 		margin: auto;
 	}
@@ -112,6 +116,8 @@
 	.right{
 		flex: 1;
 		background-color: white;
+		min-width: 400px;
+		width: auto;
 		margin: 1px;
 		padding: 5px;
 	}
@@ -126,8 +132,10 @@
 		font-size: 15px;
 	}
 	.rightcontent{
+		min-width: 400px;
 		width: auto;
-		height: 800px;
+		min-height: 600px;
+		height: auto;
 		display: flex;
 		justify-content: center;
 		align-items: center;
@@ -148,6 +156,42 @@
 		height: 40px;
 		margin: 10px;
 	}
+	.mmaintitle{
+		font-size: 17px;
+	}
+	@media (max-width: 400px){
+		#sidebox4{
+			display: none;
+		}
+	}
+	@media (max-width: 550px){
+		#sidebox3{
+			display: none;
+		}
+	}
+	@media (max-width: 700px){
+		#sidebox2{
+			display: none;
+		}
+	}
+	@media (max-width: 750px){
+		.left{
+			display: none;
+		}
+	}
+	@media (max-width: 850px){
+		#sidebox1{
+			display: none;
+		}
+	}
+	
+	@media (max-width: 900px){
+		.minititle{
+			display: none;
+			transiton: 2s;
+		}
+	}
+	
 </style>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 
@@ -156,7 +200,7 @@
 
 <script type="text/javascript">   
 	$(document).ready( function() {
-		$("#header").load("header2.html");  
+		$("#header").load("header3.html");  
 		$("#footer").load("footer.html");  
 	});
 </script>
@@ -171,31 +215,31 @@
 	<div class="topcontent">
 		<div class="main">
 			<div class="mainbox">
-				<div class="infotitle"><h4>ㅇㅇㅇ님 ></h4></div>
+				<div class="infotitle"><strong>ㅇㅇㅇ님 ></strong></div>
 				<div class="infocontent">최초 1회 무료배송<br>적립 5%</div>
 			</div>
 		</div>
-		<div class="side">
+		<div class="side" id="sidebox4">
 			<div class="sidebox">
-				<div class="infotitle"><h4>적립금 ></h4></div>
+				<div class="infotitle"><strong>적립금 ></strong></div>
 				<div class="infocontent">0원</div>
 			</div>
 		</div>
-		<div class="side">
+		<div class="side" id="sidebox3">
 			<div class="sidebox">
-				<div class="infotitle"><h4>쿠폰 ></h4></div>
+				<div class="infotitle"><strong>쿠폰 ></strong></div>
 				<div class="infocontent">0개</div>
 			</div>
 		</div>
-		<div class="side">
+		<div class="side" id="sidebox2">
 			<div class="sidebox">
-				<div class="infotitle"><h4>트리박스 ></h4></div>
+				<div class="infotitle"><strong>트리박스 ></strong></div>
 				<div class="infocontent">알아보기</div>
 			</div>
 		</div>
-		<div class="side">
+		<div class="side" id="sidebox1">
 			<div class="sidebox">
-				<div class="infotitle"><h4>트리패스 ></h4></div>
+				<div class="infotitle"><strong class="mmaintitle1">트리패스 ></strong></div>
 				<div class="infocontent">알아보기</div>
 			</div>
 		</div>
@@ -235,7 +279,7 @@
 		</div>
 		<div  class="right">
 			<div><h2 class="title">주문내역</h2>
-				<span>최대 지난 3년간의 주문내역을 확인할 수 있어요</span>
+				<span class="minititle">최대 지난 3년간의 주문내역을 확인할 수 있어요</span>
 				<form id="select" action="mypage.html">
 					<select class="select">
 						<option>3개월</option>
