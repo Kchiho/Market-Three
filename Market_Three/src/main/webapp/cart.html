@@ -15,11 +15,23 @@
 	.flex-container{
 	display: flex;
 	flex-direction: row;
-	justify-content: flex-start;
+	justify-content: center;
 	flex-wrap: wrap;
 	align-content: stretch;
 	}
+	.flex-container2{
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-start;
+	flex-wrap: wrap;
+	align-content: stretch;
+	flex-basis:70%;
+	flex-grow: 1;
+	margin-left:20px;
+	}
 	.flex-box1{
+	flex-direction: row;
+	justify-content: flex-start;
 	margin-left: 20px;
 	margin-top: 20px;
 	padding-top: 20px;
@@ -64,16 +76,25 @@ $(document).ready(function() {
 		}, 200);
 	}).scroll();
 });
+
+$(document).ready(function() {
+	$("#header").load("header.html");
+	$("#footer").load("footer.html");
+});
 </script>
-<jsp:include page="header.jsp"></jsp:include>
 </head>
 <body>
-<div style="height:1000px" class="flex-container">
+<div id="header"></div>
+<div style="height:1000px">
+<div class="flex-container">
 <div class="flex-box1">
 	<div class="h2Title">
 	<h1>장바구니</h1>
-	<hr>
-	</div>
+</div>
+</div>
+</div>
+<div class="flex-container2">
+<div class="flex-box1">
 	<div>
 		<div class="cartBox1">
 			<label>
@@ -84,10 +105,7 @@ $(document).ready(function() {
 		</div>
 	</div>
 	<div>
-	<table>
-		<td><p class="">장바구니에 담긴 상품이 없습니다.</p></td>
-	</table>
-	<hr>
+		<p class="table-primary">장바구니에 담긴 상품이 없습니다.</p>
 	</div>
 	<div>
 		<div class="cartBox2">
@@ -98,6 +116,8 @@ $(document).ready(function() {
 			<button class="">선택삭제</button>
 		</div>
 	</div>
+</div>
+</div>
 </div>
 
 <div class="flex-box2" id="floatMenu">
@@ -143,11 +163,8 @@ $(document).ready(function() {
 				</div>
 			</div>
 		</div>
-	</div>
-
-
 </body>
 <footer>
-<jsp:include page="footer.jsp"></jsp:include>
+<div id="footer"></div>
 </footer>
 </html>
