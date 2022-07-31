@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"
+	integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+	crossorigin="anonymous"></script>
+<link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+<!-- Bootstrap icons-->
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css"
+	rel="stylesheet" />
+<!-- Core theme CSS (includes Bootstrap)-->
+<link href="startbootstrap-shop-homepage-gh-pages/css/styles.css"
+	rel="stylesheet" />
+
+<style type="text/css">
+.navbar {
+	position: fiexd;
+	top: 0;
+}
+
+#logo {
+	width: auto;
+	height: 150px;
+	background-color: white;
+	text-align: center;
+	min-width: 500px;
+}
+
+#main {
+	width: 150px;
+	height: 150px;
+}
+
+.lj {
+	margin-right: 10px;
+}
+
+.hmenu {
+	width: auto;
+	max-width: 1100px;
+	min-width: 600px;
+	margin: auto;
+	height: 50px;
+}
+
+.hflex-container {
+	display: flex;
+	height: 50px;
+	align-items: center;
+	height: 50px;
+	justify-content: space-between;
+	border-bottom: 3px double lightgray;
+}
+
+.hflex-item {
+	flex-basis: auto;
+	height: 40px;
+	text-align: center;
+	line-height: 40px;
+	min-width: 200px;
+}
+
+#hcategorimenu {
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+	display: none;
+	position: absolute;
+	z-index: 1000;
+	background-color: white;
+	min-width: 200px;
+	border-top: 1px solid black;
+	margin-top: 6px;
+}
+
+#hcategorimain:hover {
+	cursor: pointer;
+}
+
+#hcategorimenu>li {
+	border-bottom: 1px solid black;
+}
+
+a:link {
+	color: black;
+	text-decoration: none;
+}
+
+.hitl .hitr {
+	min-width: 150px;
+}
+
+.hitc {
+	width: 150px;
+	min-width: 100px;
+	display: inline-block;
+}
+
+@media ( max-width : 900px) {
+	.hitc {
+		display: none;
+		width: 100px;
+	}
+}
+</style>
+
+</head>
+<body>
+	<script>
+		$(document).ready(function() {
+			$("#hcategorimain").click(function() {
+				$("#hcategorimenu").slideToggle();
+			});
+		});
+	</script>
+	<!-- 네이게이션바 -->
+	<nav class="navbar navbar-expand-lg navbar-light bg-light">
+		<div class="container px-4 px-lg-5">
+			<a class="navbar-brand" href="MTmain.html">Market Three</a>
+			<button class="navbar-toggler" type="button"
+				data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+				aria-controls="navbarSupportedContent" aria-expanded="false"
+				aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarSupportedContent">
+				<ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
+					<li class="nav-item"><a class="nav-link active"
+						aria-current="page" href="MTmain.html">Home</a></li>
+					<li class="nav-item"><a class="nav-link"
+						href="https://github.com/Kchiho/Market-Three.git" target="_blank">About</a></li>
+
+				</ul>
+				<div class="lj">
+					<a href="login.html">Login</a>
+				</div>
+				<div class="lj">
+					<a href="join.html">Join</a>
+				</div>
+				<form class="d-flex" action="cartFixed.html">
+					<button class="btn btn-outline-dark" type="submit">
+						<i class="bi-cart-fill me-1"></i> Cart <span
+							class="badge bg-dark text-white ms-1 rounded-pill">0</span>
+					</button>
+				</form>
+			</div>
+		</div>
+	</nav>
+	<!-- Header-->
+	<div id="logo">
+		<a href="MTmain.html"><img id="main" src="images/logoBk.png"
+			alt="마켓트리 로고"></a>
+	</div>
+	<div class="hmenu">
+		<div class="hflex-container">
+			<div class="hflex-item hitl">
+				<span id="hcategorimain">전체카테고리
+					<ul id="hcategorimenu">
+						<li>과일</li>
+						<li>채소</li>
+						<li>정육</li>
+						<li>건강식품</li>
+					</ul>
+				</span>
+
+			</div>
+			<div class="hflex-item">
+				<div class="hitc">
+					<span>베스트</span>
+				</div>
+				<div class="hitc">
+					<span>신상품</span>
+				</div>
+				<div class="hitc">
+					<span>추천상품</span>
+				</div>
+			</div>
+			<div class="hflex-item hitr">
+				<a href="mypage.html"><span style="color: black">My page</span></a>
+			</div>
+		</div>
+
+	</div>
+
+
+</body>
+</html>
