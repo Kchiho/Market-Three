@@ -390,19 +390,21 @@
 	top: 30px;
 }
 </style>
+
 <!-- floatMenuScript -->
 <script>
 	$(document).ready(function() {
 		var floatPosition = parseInt($("#floatMenu").css('top'));
 		$(window).scroll(function() {
 			var scrollTop = $(window).scrollTop();
+			var val = $(document).height() - $(window).height() - $("footer").outerHeight();
+
 			var newPosition = scrollTop + floatPosition + "px";
-			$("#floatMenu").stop().animate({
-				"top" : newPosition
-			}, 500);
-		}).scroll();
+			$("#floatMenu").stop().animate({"top" : newPosition}, 500);
+		});
 	});
 </script>
+
 <!-- Header/FooterInputScript -->
 <script type="text/javascript">
 	$(document).ready(function() {
@@ -412,8 +414,8 @@
 </script>
 </head>
 <body>
-	<div id="header"></div>
 	<div class="css-t79vuj e15sbxqa2">
+	<div id="header"></div>
 		<!-- MyCart -->
 		<div class="css-1n2hipb">
 		<h2">장바구니</h2>
@@ -509,7 +511,7 @@
 				</div>
 			</div>
 		</div>
+		<div id="footer"></div>
 	</div>
-	<!-- <div id="footer"> -->
 </body>
 </html>
