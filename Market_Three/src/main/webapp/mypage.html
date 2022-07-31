@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>MarketThree :: 내일의 장보기, MarketThree</title>
+<link rel="icon" type="image/x-icon" href="images/favicon.jpg" />
+<style type="text/css">
+	*, :after, :before {
+		box-sizing: border-box;
+		margin: 0;
+	}
+
+	*, :after, :before, legend, td, th {
+		padding: 0;
+	}
+	#content{ /*컨텐츠 전체*/
+		width: auto;
+		height: auto;
+		max-width: 1050px;
+		background-color: white;
+		padding: 10px;
+		margin: 0 auto;
+	}
+	.topcontent{ /*상단컨텐츠*/
+		width: auto;
+		height: auto;
+		border: 5px solid white;
+		background-color: rgb(235, 235, 235);
+		display: flex;
+		justify-content: space-around;
+		align-items: center;
+		flex-wrap: wrap;
+	}
+	.main{
+		flex-grow: 1;
+		min-width: 170px;
+		max-width: 400px;
+		height: 150px;
+		background-color: white;
+		border: 0.5px dotted black;
+	}
+	.side{
+		width: 150px;
+		height: 150px;
+		background-color: white;
+		border: 0.5px dotted black;
+		flex-shrink: 0;
+	}
+	.mainbox{
+		margin: 30px;
+	}
+	.sidebox{
+		margin: 30px;
+	}
+	.infotitle{
+		position: relative;
+		width: auto;
+		height: 50px;
+		cursor: pointer;
+		fontsize: 17;
+	}
+	.infocontent{
+		position: relative;
+		width: auto;
+		height: 50px;
+	}
+	.blurb{ /*광고*/
+		width: auto;
+		min-width: 800px;
+		height: 60px;
+		margin: auto;
+	}
+	.blurb > a> img{
+		width: 100%;
+		height: 100%;;
+	}
+	.footcontent{ /*하단컨텐츠*/
+		display: flex;
+		width: auto;
+		height: 1050px;
+		border: 5px solid white;
+		background-color: rgb(235, 235, 235);
+	}
+	.left{ /*왼쪽 마이트리*/
+		flex: 0;
+		flex-basis: 200px;
+		background-color: white;
+		margin: 1px;
+		padding: 5px;
+	}
+	.list{
+		border: none;
+		width: auto;
+		height: 50px;
+	}
+	.listtitle{
+		display: inline-block;
+		position: relative;
+		width: 100px;
+		height: 20px;
+		margin: 15px;
+	}
+	.listmove{
+		display: inline-block;
+		position: relative;
+		width: 30px;
+		height: 20px;
+		margin: 15px;
+		text-align: right;
+		cursor: pointer;
+	}
+	.title{
+		margin: 15px;
+		display: inline-block;
+	}
+	.right{
+		flex: 1;
+		background-color: white;
+		min-width: 400px;
+		width: auto;
+		margin: 1px;
+		padding: 5px;
+	}
+	#select{
+		display: inline;
+		float: right;
+		margin: 10px;
+	}
+	.select{
+		width: 120px;
+		height: 40px;
+		font-size: 15px;
+	}
+	.rightcontent{
+		min-width: 400px;
+		width: auto;
+		min-height: 600px;
+		height: auto;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-direction: column;
+	}
+	.rightitem{
+		flex-basis: auto;
+		width: 100px;
+		height: 100px;
+		margin: 10px;
+	}
+	#noexist{
+		width: 100%;
+		height: 100%;
+	}
+	.bestproduct{
+		width: 150px;
+		height: 40px;
+		margin: 10px;
+	}
+	.mmaintitle{
+		font-size: 17px;
+	}
+	@media (max-width: 400px){
+		#sidebox4{
+			display: none;
+		}
+	}
+	@media (max-width: 550px){
+		#sidebox3{
+			display: none;
+		}
+	}
+	@media (max-width: 700px){
+		#sidebox2{
+			display: none;
+		}
+	}
+	@media (max-width: 750px){
+		.left{
+			display: none;
+		}
+	}
+	@media (max-width: 850px){
+		#sidebox1{
+			display: none;
+		}
+	}
+	
+	@media (max-width: 900px){
+		.minititle{
+			display: none;
+			transiton: 2s;
+		}
+	}
+	
+</style>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+</head>
+<body>
+
+<script type="text/javascript">   
+	$(document).ready( function() {
+		$("#header").load("header3.html");  
+		$("#footer").load("footer.html");  
+	});
+</script>
+
+
+
+<!-- header영역 -->
+<div id="header"></div>
+<br>
+<!-- content영역 -->
+<div id="content">
+	<div class="topcontent">
+		<div class="main">
+			<div class="mainbox">
+				<div class="infotitle"><strong>ㅇㅇㅇ님 ></strong></div>
+				<div class="infocontent">최초 1회 무료배송<br>적립 5%</div>
+			</div>
+		</div>
+		<div class="side" id="sidebox4">
+			<div class="sidebox">
+				<div class="infotitle"><strong>적립금 ></strong></div>
+				<div class="infocontent">0원</div>
+			</div>
+		</div>
+		<div class="side" id="sidebox3">
+			<div class="sidebox">
+				<div class="infotitle"><strong>쿠폰 ></strong></div>
+				<div class="infocontent">0개</div>
+			</div>
+		</div>
+		<div class="side" id="sidebox2">
+			<div class="sidebox">
+				<div class="infotitle"><strong>트리박스 ></strong></div>
+				<div class="infocontent">알아보기</div>
+			</div>
+		</div>
+		<div class="side" id="sidebox1">
+			<div class="sidebox">
+				<div class="infotitle"><strong class="mmaintitle1">트리패스 ></strong></div>
+				<div class="infocontent">알아보기</div>
+			</div>
+		</div>
+		<div class="blurb"><a href="#"><img alt="광고이미지" src="images/blurb.jpg"> </a></div>
+	</div>
+	<div class="footcontent">
+		<div class="left"><h2 class="title">마이트리</h2>
+			<div>
+				<div class="list">
+					<span class="listtitle">주문내역</span><span class="listmove">></span>
+				</div>
+				<div class="list">
+					<span class="listtitle">선물내역</span><span class="listmove">></span>
+				</div>
+				<div class="list">
+					<span class="listtitle">찜한상품</span><span class="listmove">></span>
+				</div>
+				<div class="list">
+					<span class="listtitle">배송지관리</span><span class="listmove">></span>
+				</div>
+				<div class="list">
+					<span class="listtitle">상품후기</span><span class="listmove">></span>
+				</div>
+				<div class="list">
+					<span class="listtitle">상품문의</span><span class="listmove">></span>
+				</div>
+				<div class="list">
+					<span class="listtitle">적립금</span><span class="listmove">></span>
+				</div>
+				<div class="list">
+					<span class="listtitle">쿠폰</span><span class="listmove">></span>
+				</div>
+				<div class="list">
+					<span class="listtitle">개인정보수정</span><span class="listmove">></span>
+				</div>
+			</div>
+		</div>
+		<div  class="right">
+			<div><h2 class="title">주문내역</h2>
+				<span class="minititle">최대 지난 3년간의 주문내역을 확인할 수 있어요</span>
+				<form id="select" action="mypage.html">
+					<select class="select">
+						<option>3개월</option>
+						<option>6개월</option>
+						<option>1년</option>
+						<option>3년</option>
+					</select>
+				</form>
+				<hr>
+			</div>
+			<div class="rightcontent">
+				<div class="rightitem"><img id="noexist" alt="정보없음" src="images/existlist.png"></div>
+				<div>최근 주문내역이 없습니다</div>
+				<div><button class="bestproduct">베스트 상품보기</button></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- footer영역 -->
+<div id="footer"></div>
+
+</body>
+</html>
