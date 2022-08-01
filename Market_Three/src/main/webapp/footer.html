@@ -14,31 +14,35 @@
 
 <style type="text/css">
 	#footer{
-		width: 1050px;
-		minwidth: 1050px;
-		height: 300px;
+		width: auto;
+		max-width: 1050px;
+		min-width: 500px;
+		height: auto;
 		background-color: white;
 		margin: auto;
 	}
 	.flex-container{
 		display: flex;
-		height: 240px;
+		max-height: 400px;
+		min-width: 500px;
+		width: auto;
+		height: auto;
 		background-color: white;
 		margin: auto;
-		align-items: center;
-		justify-content: space-evenly;
+		justify-content: center;
 		flex-wrap: wrap;
 	}
 	.flex-item1{
 		background-color: white;
 		width: 400px;
-		height: 120px;
+		height: 150px;
 		text-align: left;
 		font-size: 8px;
 	}
 	.flex-item2{
 		background-color: white;
-		width: 1000px;
+		min-width: 500px;
+		width: auto;
 		height: 80px;
 		line-height: 80px;
 		text-align: center;
@@ -60,6 +64,14 @@
 		width: 20px;
 		height: 20px;
 	}
+	@media (max-width: 800px){
+		.flex-item1{
+			text-align: center;
+		}
+		.flex-item2{
+			text-align: center;
+		}
+	}
 </style>
 </head>
 <body>
@@ -68,7 +80,6 @@
     	<hr>
     	<div class="flex-container">
     		<div class="flex-item1">
-    			<div>
     				<span class="callcenter">고객센터</span>
     				<img id="call" alt="전화기 사진" src="images/call.png">
     				<span class="callcenter">0000-0000</span><br>
@@ -78,7 +89,6 @@
     				<img class="call" alt="유튜브" src="images/youtube.png">
     				<img class="call" alt="인스타그램" src="images/instagram.png">
     				<img class="call" alt="네이버" src="images/naver.png">
-    			</div>
     		</div>    		
     		<div class="flex-item1">
     			<p>법인명(상호): 주식회사 테크트리</p>
