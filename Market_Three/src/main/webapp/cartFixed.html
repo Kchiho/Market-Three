@@ -10,9 +10,38 @@
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"
 	integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
 	crossorigin="anonymous"></script>
+<!-- Font -->
+<link rel="preconnect" href="https://fonts.googleapis.com/%22%3E
+<link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Jua&display=swap" rel="stylesheet">
 
+<!-- Media -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
 <style type="text/css">
+*{
+	font-family: 'Jua';
+}
+
+@media ( max-width: 600px){
+	.css-1n2hipb {
+		padding: 50px 0 48px;
+		font-weight: 500;
+		font-size: 14px;
+		line-height: 35px;
+		text-align: center;
+		background-color : #DDDDDD;
+		}
+		
+	.css-19kxq7d {
+		display: none;
+	}
+	
+	.css-19kxq7d li {
+		display: none;
+	}
+}
+<!-- -->
 .css-1n2hipb {
 	padding: 50px 0 48px;
 	font-weight: 500;
@@ -400,23 +429,21 @@
 </script>
 </head>
 <body>
-	<div class="css-t79vuj e15sbxqa2">
 	<div id="header"></div>
+	<div class="css-t79vuj e15sbxqa2">
 		<!-- MyCart -->
 		<div class="css-1n2hipb">
-		<h2">장바구니</h2>
+		<h2>장바구니</h2>
 		</div>
 		<div></div>
 		<div class="css-a6t9xs er0tf673">
 			<div class="css-8wfj4z er0tf672">
 				<div class="css-20o6z0 e149z643">
 					<div class="css-zbxehx e149z642">
-						<label class="css-61d0l5 e1dcessg1" disabled=""> <input
-							type="checkbox" disabled="" class="css-agvwxo e1dcessg0" /> <img
-							src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij4KICAgIDxnIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0iZXZlbm9kZCI+CiAgICAgICAgPGc+CiAgICAgICAgICAgIDxnPgogICAgICAgICAgICAgICAgPGc+CiAgICAgICAgICAgICAgICAgICAgPGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTExNjIgLTEwOTApIHRyYW5zbGF0ZSgxMDAgOTM2KSB0cmFuc2xhdGUoMTA0NiAxNDIpIHRyYW5zbGF0ZSgxNiAxMikiPgogICAgICAgICAgICAgICAgICAgICAgICA8Y2lyY2xlIGN4PSIxMiIgY3k9IjEyIiByPSIxMS41IiBmaWxsPSIjRjJGMkYyIiBzdHJva2U9IiNFMkUyRTIiLz4KICAgICAgICAgICAgICAgICAgICAgICAgPHBhdGggc3Ryb2tlPSIjREREIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIHN0cm9rZS13aWR0aD0iMS41IiBkPSJNNyAxMi42NjdMMTAuMzg1IDE2IDE4IDguNSIvPgogICAgICAgICAgICAgICAgICAgIDwvZz4KICAgICAgICAgICAgICAgIDwvZz4KICAgICAgICAgICAgPC9nPgogICAgICAgIDwvZz4KICAgIDwvZz4KPC9zdmc+Cg=="
-							alt="" class="css-1wfsi82 e31wziv0" />전체선택 (0/0)
-						</label> <span class="css-454d5e e149z641"></span>
-						<button disabled="" class="css-0 e149z640">선택삭제</button>
+						<label class="css-61d0l5 e1dcessg1"><input
+							type="checkbox"/>전체선택 (0/0)</label>
+							<span class="css-454d5e e149z641"></span>
+						<button class="css-0 e149z640">선택삭제</button>
 					</div>
 				</div>
 				<div class="css-2lvxh7 ej77nku0">
@@ -424,12 +451,10 @@
 				</div>
 				<div class="css-20o6z0 e149z643">
 					<div class="css-zbxehx e149z642">
-						<label class="css-61d0l5 e1dcessg1" disabled=""><input
-							type="checkbox" disabled="" class="css-agvwxo e1dcessg0" /><img
-							src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij4KICAgIDxnIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0iZXZlbm9kZCI+CiAgICAgICAgPGc+CiAgICAgICAgICAgIDxnPgogICAgICAgICAgICAgICAgPGc+CiAgICAgICAgICAgICAgICAgICAgPGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTExNjIgLTEwOTApIHRyYW5zbGF0ZSgxMDAgOTM2KSB0cmFuc2xhdGUoMTA0NiAxNDIpIHRyYW5zbGF0ZSgxNiAxMikiPgogICAgICAgICAgICAgICAgICAgICAgICA8Y2lyY2xlIGN4PSIxMiIgY3k9IjEyIiByPSIxMS41IiBmaWxsPSIjRjJGMkYyIiBzdHJva2U9IiNFMkUyRTIiLz4KICAgICAgICAgICAgICAgICAgICAgICAgPHBhdGggc3Ryb2tlPSIjREREIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIHN0cm9rZS13aWR0aD0iMS41IiBkPSJNNyAxMi42NjdMMTAuMzg1IDE2IDE4IDguNSIvPgogICAgICAgICAgICAgICAgICAgIDwvZz4KICAgICAgICAgICAgICAgIDwvZz4KICAgICAgICAgICAgPC9nPgogICAgICAgIDwvZz4KICAgIDwvZz4KPC9zdmc+Cg=="
-							alt="" class="css-1wfsi82 e31wziv0" />전체선택 (0/0)</label><span
-							class="css-454d5e e149z641"></span>
-						<button disabled="" class="css-0 e149z640">선택삭제</button>
+						<label class="css-61d0l5 e1dcessg1"><input
+							type="checkbox"/>전체선택 (0/0)</label>
+							<span class="css-454d5e e149z641"></span>
+						<button class="css-0 e149z640">선택삭제</button>
 					</div>
 				</div>
 			</div>
