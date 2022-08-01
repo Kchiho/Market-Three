@@ -283,12 +283,9 @@
 }
 
 .menu-4 {
-	display: -webkit-box;
-	display: -webkit-flex;
-	display: -ms-flexbox;
 	display: flex;
-	gap: 8px;
-	margin-top: 20px;
+    gap: 8px;
+    margin-top: 20px;
 }
 
 .heart {
@@ -311,21 +308,37 @@
 }
 
 .alrt {
-	border-color: #ddd;
-	color: #ddd;
+	display: block;
+    padding: 0px 10px;
+    text-align: center;
+    overflow: hidden;
+    width: 56px;
+    height: 56px;
+    border-radius: 3px;
+    color: rgb(51, 51, 51);
+    background-color: rgb(255, 255, 255);
+    border: 1px solid rgb(221, 221, 221);
 }
 
 .alrt1 {
-	display: inline-block;
-	font-size: 16px;
-	font-weight: 500;
+	box-sizing: border-box;
+    margin: 0;
+}
+img{
+    vertical-align: middle;
 }
 
 .cart {
-	-webkit-box-flex: 1;
-	-webkit-flex-grow: 1;
-	-ms-flex-positive: 1;
-	flex-grow: 1;
+    display: block;
+    padding: 0px 10px;
+    text-align: center;
+    overflow: hidden;
+    width: 320px;
+    height: 52px;
+    border-radius: 3px;
+    color: rgb(255, 255, 255);
+    background-color: rgb(95, 0, 128);
+    border: 0px none;
 }
 
 .price {
@@ -553,12 +566,12 @@ dl {
 					</div>
 					<!-- 장바구니 담기 -->
 					<div class="menu-4">
-						<button class="heart">
+						<button class="heart" disabled="" width="56" height="56" radius="3">
 							<span class="heart1"> <img alt="heart"
 								src="images/heart.svg">
 							</span>
 						</button>
-						<button class="alrt">
+						<button class="alrt" disabled="" width="56" height="56" radius="3">
 							<span class="alrt1"> <img alt="alrt" src="images/alrt.svg">
 							</span>
 						</button>
