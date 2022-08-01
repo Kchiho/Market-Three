@@ -18,8 +18,9 @@
 <style type="text/css">
 .navbar {
 	position: fiexd;
-	top:0;
+	top: 0;
 }
+
 #logo {
 	width: auto;
 	height: 150px;
@@ -61,38 +62,45 @@
 	line-height: 40px;
 	min-width: 200px;
 }
+
 #hcategorimenu {
 	margin: 0;
 	padding: 0;
 	list-style-type: none;
 	display: none;
 	position: absolute;
-	z-index: 1;
+	z-index: 1000;
 	background-color: white;
 	min-width: 200px;
 	border-top: 1px solid black;
 	margin-top: 6px;
 }
-#hcategorimain:hover{
+
+#hcategorimain:hover {
 	cursor: pointer;
 }
-#hcategorimenu > li{
+
+#hcategorimenu>li {
 	border-bottom: 1px solid black;
 }
-a:link{
+
+a:link {
 	color: black;
 	text-decoration: none;
 }
-.hitl .hitr{
+
+.hitl .hitr {
 	min-width: 150px;
 }
-.hitc{
+
+.hitc {
 	width: 150px;
 	min-width: 100px;
 	display: inline-block;
 }
-@media (max-width: 900px){
-	.hitc{
+
+@media ( max-width : 900px) {
+	.hitc {
 		display: none;
 		width: 100px;
 	}
@@ -101,13 +109,13 @@ a:link{
 
 </head>
 <body>
-<script>
-    $(document).ready(function() {            
-        $("#hcategorimain").click(function() {               
-        	$("#hcategorimenu").slideToggle();
-        });
-    });
-</script>
+	<script>
+		$(document).ready(function() {
+			$("#hcategorimain").click(function() {
+				$("#hcategorimenu").slideToggle();
+			});
+		});
+	</script>
 	<!-- 네이게이션바 -->
 	<nav class="navbar navbar-expand-lg navbar-light bg-light">
 		<div class="container px-4 px-lg-5">
@@ -122,16 +130,17 @@ a:link{
 				<ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
 					<li class="nav-item"><a class="nav-link active"
 						aria-current="page" href="MTmain.html">Home</a></li>
-					<li class="nav-item"><a class="nav-link" href="https://github.com/Kchiho/Market-Three.git" target="_blank">About</a></li>
+					<li class="nav-item"><a class="nav-link"
+						href="https://github.com/Kchiho/Market-Three.git" target="_blank">About</a></li>
 
 				</ul>
 				<div class="lj">
-					<a href="#">Login</a>
+					<a href="login.html">Login</a>
 				</div>
 				<div class="lj">
 					<a href="join.html">Join</a>
 				</div>
-				<form class="d-flex" action="cart2.html">
+				<form class="d-flex" action="cartFixed.html">
 					<button class="btn btn-outline-dark" type="submit">
 						<i class="bi-cart-fill me-1"></i> Cart <span
 							class="badge bg-dark text-white ms-1 rounded-pill">0</span>
@@ -142,7 +151,8 @@ a:link{
 	</nav>
 	<!-- Header-->
 	<div id="logo">
-		<a href="MTmain.html"><img id="main" src="images/logoBk.png" alt="마켓트리 로고"></a>
+		<a href="MTmain.html"><img id="main" src="images/logoBk.png"
+			alt="마켓트리 로고"></a>
 	</div>
 	<div class="hmenu">
 		<div class="hflex-container">
@@ -158,18 +168,21 @@ a:link{
 
 			</div>
 			<div class="hflex-item">
-				<div class="hitc"><span>베스트</span>
+				<div class="hitc">
+					<span>베스트</span>
 				</div>
-				<div class="hitc"><span>신상품</span>
+				<div class="hitc">
+					<span>신상품</span>
 				</div>
-				<div class="hitc"><span>추천상품</span>
+				<div class="hitc">
+					<span>추천상품</span>
 				</div>
 			</div>
 			<div class="hflex-item hitr">
-				<a href="mypage.html"><span>My page</span></a>
+				<a href="mypage.html"><span style="color: black">My page</span></a>
 			</div>
 		</div>
-		
+
 	</div>
 
 

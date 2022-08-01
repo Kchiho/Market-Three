@@ -385,25 +385,11 @@
 
 /* floatMenuFunction */
 #floatMenu {
-	position: absolute;
 	right: 30px;
-	top: 30px;
 }
 </style>
 
 <!-- floatMenuScript -->
-<script>
-	$(document).ready(function() {
-		var floatPosition = parseInt($("#floatMenu").css('top'));
-		$(window).scroll(function() {
-			var scrollTop = $(window).scrollTop();
-			var val = $(document).height() - $(window).height() - $("footer").outerHeight();
-
-			var newPosition = scrollTop + floatPosition + "px";
-			$("#floatMenu").stop().animate({"top" : newPosition}, 500);
-		});
-	});
-</script>
 
 <!-- Header/FooterInputScript -->
 <script type="text/javascript">
