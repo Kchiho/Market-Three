@@ -6,9 +6,12 @@
 <title>MarketThree :: 내일의 장보기, MarketThree</title>
 <!-- Favicon-->
 <link rel="icon" type="image/x-icon" href="images/favicon.jpg" />
-<link rel="preconnect" href="https://fonts.googleapis.com/%22%3E
-<link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Jua&display=swap" rel="stylesheet">
+<link rel="preconnect"
+	href="https://fonts.googleapis.com/%22%3E
+<link rel="
+	preconnect" href="https://fonts.gstatic.com/" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Jua&display=swap"
+	rel="stylesheet">
 <style type="text/css">
 * {
 	font-family: Jua;
@@ -178,20 +181,13 @@
 }
 
 .description {
-	display: -webkit-box;
-	display: -webkit-flex;
-	display: -ms-flexbox;
 	display: flex;
-	-webkit-flex: 1;
-	-ms-flex: 1;
-	flex: 1;
-	-webkit-flex-direction: column;
-	-ms-flex-direction: column;
+	flex: 1 1 0%;
 	flex-direction: column;
 }
 
 .description-1 {
-	color: #333;
+	color: rgb(51, 51, 51);
 	line-height: 19px;
 	white-space: pre-line;
 	word-break: break-all;
@@ -384,6 +380,27 @@
 	vertical-align: top;
 }
 
+p {
+	display: block;
+	margin-block-start: 1em;
+	margin-block-end: 1em;
+	margin-inline-start: 0px;
+	margin-inline-end: 0px;
+}
+
+dd {
+	display: block;
+	margin-inline-start: 40px;
+}
+
+dl {
+	display: block;
+	margin-block-start: 1em;
+	margin-block-end: 1em;
+	margin-inline-start: 0px;
+	margin-inline-end: 0px;
+}
+
 /*
 .navi {
 	display: -webkit-box;
@@ -427,6 +444,27 @@
 			$("#header").load("header3.html");
 			$("#footer").load("footer.html");
 		});
+
+		$(function() {
+			$('.down').click(function(e) {
+				e.preventDefault();
+				var stat = $('.num').text();
+				var num = parseInt(stat, 10);
+				num--;
+				if (num <= 0) {
+					alert('더이상 줄일수 없습니다.');
+					num = 1;
+				}
+				$('.num').text(num);
+			});
+			$('.up').click(function(e) {
+				e.preventDefault();
+				var stat = $('.num').text();
+				var num = parseInt(stat, 10);
+				num++;
+				$('.num').text(num);
+			});
+		});
 	</script>
 	<div id="header"></div>
 	<div class="body">
@@ -463,7 +501,7 @@
 						<dt class="term">포장타입</dt>
 						<dd class="description">
 							<p class="description-1">냉동 (종이포장)</p>
-							<p>택배배송은 에코 포장이 스티로폼으로 대체됩니다</p>
+							<p class="description-2">택배배송은 에코 포장이 스티로폼으로 대체됩니다</p>
 						</dd>
 					</dl>
 					<dl class="list">
@@ -476,23 +514,21 @@
 						<dt class="term">중량/용량</dt>
 						<dd class="description">
 							<p class="description-1">460g (돈까스360g, 소스100g)</p>
-							<p>23시 전 주문 시 내일 아침 7시 전 도착 (대구.부산.울산 샛별배송 운영시간 별도 확인)</p>
 						</dd>
 					</dl>
 					<dl class="list">
 						<dt class="term">알레르기정보</dt>
 						<dd class="description">
-							<p class="description-1">
-								- 돈까스: 우유, 대두, 밀, 계란, 돼지고기 함유 / 계란, 우유, 메밀, 땅콩, 대두, 밀, 고들어, 게, 새우, 돼지고기, 쇠고기, 닭고기, 복숭아, 토마토와 같은 시설에서 제조
-								- 애플브라운 소스:난류, 우유, 대두, 밀, 토마토, 쇠고기, 조개류(굴) 함유 / 땅콩, 고등어, 새우, 돼지고기, 아황산류, 닭고기, 오징어,조개류(홍합)과 같은 시설에서 제조
-								- 치폴레핑크 소스: 난류, 우유, 대두, 밀, 토마토, 이산화항 함유 / 땅콩, 고등어, 새우, 돼지고기, 닭고기, 쇠고기, 오징어, 조개류와 같은 시설에서 제조
-							</p>
+							<p class="description-1">- 돈까스: 우유, 대두, 밀, 계란, 돼지고기 함유 / 계란, 우유, 메밀, 땅콩, 대두, 밀, 고등어, 게, 새우, 돼지고기, 쇠고기, 닭고기, 복숭아, 토마토와 같은 시설에서 제조
+							- 애플브라운 소스: 난류, 우유, 대두, 밀, 토마토, 쇠고기, 조개류(굴) 함유 / 땅콩, 고등어, 새우, 돼지고기, 아황산류, 닭고기, 오징어, 조개류(홍합)과 같은 시설에서 제조
+							- 치폴레핑크 소스: 난류, 우유, 대두, 밀, 토마토, 이산화항 함유 / 땅콩, 고등어, 새우, 돼지고기, 닭고기, 쇠고기, 오징어, 조개류와 같은 시설에서 제조
 						</dd>
 					</dl>
 					<dl class="list">
 						<dt class="term">안내사항</dt>
 						<dd class="description">
-							<p class="description-1">- 간혹 육색이 붉은 색을 띄는 것은 핑킹현상으로, 덜 익은 것이 아니니 안심하고 섭취하셔도 됩니다.</p>
+							<p class="description-1">- 간혹 육색이 붉은 색을 띄는 것은 핑킹현상으로, 덜 익은 것이
+								아니니 안심하고 섭취하셔도 됩니다.</p>
 						</dd>
 					</dl>
 				</div>
