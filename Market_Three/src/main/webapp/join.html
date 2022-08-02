@@ -5,63 +5,82 @@
 <title>MarketThree :: 내일의 장보기, MarketThree</title>
 <link rel="icon" type="image/x-icon" href="images/faviconPP.jpg" />
 
-<link rel="preconnect" href="https://fonts.googleapis.com/%22%3E
-<link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Jua&display=swap" rel="stylesheet">
+<link rel="preconnect"
+	href="https://fonts.googleapis.com/%22%3E
+<link rel="
+	preconnect" href="https://fonts.gstatic.com/" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Jua&display=swap"
+	rel="stylesheet">
 
 
 <style type="text/css">
 * {
-    font-family: Jua;
+	font-family: Jua;
 }
+
 #joinbox {
 	width: 600px;
 	height: 600px;
 	margin: auto;
 }
-#joincontentbox{
+
+#joincontentbox {
 	width: 550px;
 	height: 550px;
 	margin: 25px;
 	display: flex;
 	flex-wrap: wrap;
 }
-.subject{
+
+.subject {
 	width: 550px;
 	font-size: 30px;
 	text-align: center;
 	border-bottom: 2px solid lightgray;
 	height: 78px;
 }
-.join_input{
+
+.join_input {
 	width: 320px;
 	font-size: 15px;
 	height: 30px;
 }
-.join_name_box{
+
+.join_name_box {
 	width: 150px;
 	display: inline;
 }
-#join_table{
+
+#join_table {
 	width: 550px;
 	height: 468px;
 	border-bottom: 2px solid lightgray;
 }
-#joinbutton{
+
+#joinbutton {
 	width: 250px;
 	height: 50px;
 	margin-left: 50px;
 }
-.join_input{
+
+.join_input {
 	margin-left: 20px;
 }
-td > button{
-	color: rgb(255, 255, 255);
-    background-color: rgb(95, 0, 128);
-    border: none;
-}
-.gender_input{
 
+td>button {
+	color: rgb(255, 255, 255);
+	background-color: rgb(95, 0, 128);
+	border: none;
+}
+
+#birth {
+	width: 150px;
+	margin-left: 20px;
+}
+
+.mmdd {
+	width: 47px;
+	height: 30px;
 }
 </style>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"
@@ -69,15 +88,182 @@ td > button{
 	crossorigin="anonymous"></script>
 </head>
 <body>
-<script type="text/javascript">   
-	$(document).ready( function() {
-		$("#header").load("header3.html");  
-		$("#footer").load("footer.html");  
-	});
-</script>
+	<script type="text/javascript">
+		$(document).ready(function() {
+			$("#header").load("header3.html");
+			$("#footer").load("footer.html");
+		});
+		function Validation() {
+
+			var RegExp = /^[a-zA-Z0-9]{6,12}$/; // 아이디 유효성 검사
+
+			var BrExp = /^[0-9]{4}$/; // 년도
+
+			var exptext = /^[A-Za-z0-9_\.\-]+@[A-Za-z0-9\-]+\.[A-Za-z0-9\-]+/; // 이메일 유효성 검사
+
+			var nameExp = /^[가-힣]{2,4}|[a-zA-Z]{2,10}\s[a-zA-Z]{2,10}$/; // 이름 유효성 검사
+
+			var phoneExp = /^\d{3}-\d{3,4}-\d{4}$/;
+
+			var userId = document.getElementById("userid");
+
+			var userPs = document.getElementById("userPs");
+
+			var userPc = document.getElementById("userPc");
+
+			var userM = document.getElementById("userm");
+
+			var userN = document.getElementById("usern");
+
+			var userR = document.getElementById("userRe");
+
+			var userBr = document.getElementById("birth");
+
+			var userh = document.getElementById("userh");
+
+			// 아이디에 아무것도 안들어가있을 경우
+
+			if (userId.value == "") {
+
+				alert("아이디를 입력해주세요");
+
+				return false;
+
+			}
+			// 아이디가 6자리 영문대소문자와 숫자로만 입력
+
+			if (!RegExp.test(userId.value)) {
+
+				alert("6~12자리 영문대소문자와 숫자로만 입력해주세요");
+
+				return false;
+
+			}
+			//id와 password가 같을 경우
+
+			if (userId.value == userPs.value) {
+
+				alert("아이디와 비밀번호가 같습니다.");
+
+				return false;
+
+			}
+
+			//==============================================================
+
+			//password가 입력되지 않을 경우
+
+			if (userPs.value == "") {
+
+				alert("비밀번호가 입력되지 않았습니다.");
+
+				return false;
+
+			}
+
+			//password 6~12자리 영문대소문자와 숫자로만 입력
+
+			if (!RegExp.test(userPs.value)) {
+
+				alert("비밀번호를 6~12자리 영문대소문자와 숫자로만 입력해주세요");
+
+				return false;
+
+			}
+
+			//id와 password_check가 같을 경우
+
+			if (userId.value == userPc.value) {
+
+				alert("아이디와 비밀번호 확인이 같습니다.");
+
+				return false;
+
+			}
+
+			//password_check가 입력되지 않을 경우
+
+			if (userPc.value == "") {
+
+				alert("비밀번호 확인이 입력되지 않았습니다.");
+
+				return false;
+
+			}
+
+			//password_check 6~12자리 영문대소문자와 숫자로만 입력
+
+			if (!RegExp.test(userPc.value)) {
+
+				alert("비밀번호 확인을 6~12자리 영문대소문자와 숫자로만 입력해주세요");
+
+				return false;
+
+			}
+
+			//===========================================================
+
+			// 이름이 영문자 썩여서 입력될 경우
+
+			if (nameExp.test(userN.value) == false) {
+
+				alert("이름형식이 맞지 않습니다.");
+
+				return false;
+
+			}
+			// 이메일이 이메일 형식과 맞지 않을 경우
+
+			if (exptext.test(userM.value) == false) {
+
+				alert("이메일형식이 맞지 않습니다.");
+
+				return false;
+
+			}
+
+			// 전화번호
+			if (userh.value == "") {
+
+				alert("전화번호가 입력되지 않았습니다.");
+
+				return false;
+			}
+			if (phoneExp.test(userh.value) == false) {
+
+				alert("전화번호 형식이 맞지 않습니다.");
+
+				return false;
+			}
+
+			// 년도 
+
+			if (BrExp.test(userBr.value) == false) {
+
+				alert("년도 형식이 맞지 않습니다.");
+
+				return false;
+			}
+
+			if (userBr.value == "") {
+
+				alert("년도가 입력되지 않았습니다.");
+
+				return false;
+			}
+			if (!("1900" <= userBr.value && userBr.value <= "2022")) {
+
+				alert("년도는 1900~2022 사이의 값을 입력해주세요");
+
+				return false;
+			}
+
+		}
+	</script>
 	<div id="header"></div>
-	
-	<div id="joinbox">
+
+	<form action="MTmain.html" id="joinbox" onsubmit="return Validation();"
+		method="post">
 		<div id="joincontentbox">
 			<div class="subject">
 				<span>회원가입</span>
@@ -85,58 +271,157 @@ td > button{
 			<table id="join_table">
 				<tr>
 					<td><div class="join_name_box">아이디</div></td>
-					<td><input class="join_input" placeholder="6자 이상의 영문 혹은 영문과 숫자를 조합"></td>
+					<td><input class="join_input" id="userid"
+						placeholder="6~12자리 영문 혹은 영문과 숫자를 조합"></td>
 					<td><div></div></td>
 				</tr>
 				<tr>
 					<td><div class="join_name_box">비밀번호</div></td>
-					<td><input class="join_input" placeholder="비밀번호를 입력해주세요"></td>
+					<td><input type="password" class="join_input" id="userPs"
+						placeholder="비밀번호를 입력해주세요"></td>
 					<td><div></div></td>
 				</tr>
 				<tr>
 					<td><div class="join_name_box">비밀번호 확인</div></td>
-					<td><input class="join_input" placeholder="비밀번호를 한번 더 입력해주세요"></td>
+					<td><input type="password" class="join_input" id="userPc"
+						placeholder="비밀번호를 한번 더 입력해주세요"></td>
 					<td><div></div></td>
 				</tr>
 				<tr>
 					<td><div class="join_name_box">이름</div></td>
-					<td><input class="join_input" placeholder="이름을 입력해주세요"></td>
+					<td><input class="join_input" id="usern"
+						placeholder="이름을 입력해주세요"></td>
 					<td><div></div></td>
 				</tr>
 				<tr>
 					<td><div class="join_name_box">이메일</div></td>
-					<td><input class="join_input" placeholder="예: marketkurly@kurly.com"></td>
+					<td><input class="join_input" id="userm"
+						placeholder="예: marketthree@three.com"></td>
 					<td></td>
 				</tr>
 				<tr>
 					<td><div class="join_name_box">휴대폰</div></td>
-					<td><input class="join_input" placeholder="숫자만 입력해주세요"></td>
+					<td><input class="join_input" id="userh"
+						placeholder="예: 010-0000-0000"></td>
 					<td><div></div></td>
 				</tr>
 				<tr>
 					<td><div class="join_name_box">주소</div></td>
-					<td><input class="join_input" placeholder="주소찾기로 주소를 확인해주세요" disabled></td>
+					<td><input class="join_input" placeholder="주소찾기로 주소를 확인해주세요"
+						disabled></td>
 					<td><input type="button" class="adress_button" value="주소찾기"></td>
 				</tr>
 				<tr>
 					<td><div class="join_name_box">성별</div></td>
-					<td>&nbsp;&nbsp;&nbsp;&nbsp;남&nbsp;<input type="radio" name="gender"> 여&nbsp;<input type="radio"
-					name="gender"> &nbsp;선택안함&nbsp;<input type="radio" name="gender"
-					checked="checked"></td>
+					<td>&nbsp;&nbsp;&nbsp;&nbsp;남&nbsp;<input type="radio"
+						name="gender"> 여&nbsp;<input type="radio" name="gender">
+						&nbsp;선택안함&nbsp;<input type="radio" name="gender"
+						checked="checked"></td>
 					<td><div></div></td>
 				</tr>
 				<tr>
 					<td><div class="join_name_box">생년월일</div></td>
-					<td><input class="join_input" placeholder="YYYY-MM-DD"></td>
+					<td><input type="text" id="birth" placeholder="4자리입력" />
+						년&nbsp; <select class="mmdd">
+
+							<option value="1">1</option>
+
+							<option value="2">2</option>
+
+							<option value="3">3</option>
+
+							<option value="4">4</option>
+
+							<option value="5">5</option>
+
+							<option value="6">6</option>
+
+							<option value="7">7</option>
+
+							<option value="8">8</option>
+
+							<option value="9">9</option>
+
+							<option value="10">10</option>
+
+							<option value="11">11</option>
+
+							<option value="12">12</option>
+
+					</select>월 &nbsp; <select class="mmdd">
+
+							<option value="1">1</option>
+
+							<option value="2">2</option>
+
+							<option value="3">3</option>
+
+							<option value="4">4</option>
+
+							<option value="5">5</option>
+
+							<option value="6">6</option>
+
+							<option value="7">7</option>
+
+							<option value="8">8</option>
+
+							<option value="9">9</option>
+
+							<option value="10">10</option>
+
+							<option value="11">11</option>
+
+							<option value="12">12</option>
+
+							<option value="13">13</option>
+
+							<option value="14">14</option>
+
+							<option value="15">15</option>
+
+							<option value="16">16</option>
+
+							<option value="17">17</option>
+
+							<option value="18">18</option>
+
+							<option value="19">19</option>
+
+							<option value="20">20</option>
+
+							<option value="21">21</option>
+
+							<option value="22">22</option>
+
+							<option value="23">23</option>
+
+							<option value="24">24</option>
+
+							<option value="25">25</option>
+
+							<option value="26">26</option>
+
+							<option value="27">27</option>
+
+							<option value="28">28</option>
+
+							<option value="29">29</option>
+
+							<option value="30">30</option>
+
+							<option value="31">31</option>
+
+					</select>일 &nbsp;</td>
 					<td><div></div></td>
 				</tr>
 				<tr>
 					<td></td>
-					<td><button id="joinbutton">회원가입하기</button></td>
+					<td><button type="submit" value="submit" id="joinbutton">회원가입하기</button></td>
 				</tr>
 			</table>
 		</div>
-	</div>
+	</form>
 	<div id="footer"></div>
 
 
