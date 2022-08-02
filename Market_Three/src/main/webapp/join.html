@@ -52,8 +52,16 @@
 	height: 50px;
 	margin-left: 50px;
 }
-td > input{
+.join_input{
 	margin-left: 20px;
+}
+td > button{
+	color: rgb(255, 255, 255);
+    background-color: rgb(95, 0, 128);
+    border: none;
+}
+.gender_input{
+
 }
 </style>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"
@@ -98,7 +106,7 @@ td > input{
 				<tr>
 					<td><div class="join_name_box">이메일</div></td>
 					<td><input class="join_input" placeholder="예: marketkurly@kurly.com"></td>
-					<td><input type="button" class="main_button" value="중복확인"></td>
+					<td></td>
 				</tr>
 				<tr>
 					<td><div class="join_name_box">휴대폰</div></td>
@@ -112,8 +120,8 @@ td > input{
 				</tr>
 				<tr>
 					<td><div class="join_name_box">성별</div></td>
-					<td>&nbsp;&nbsp;남<input type="radio" name="gender"> 여<input type="radio"
-					name="gender"> 선택안함<input type="radio" name="gender"
+					<td>&nbsp;&nbsp;&nbsp;&nbsp;남&nbsp;<input type="radio" name="gender"> 여&nbsp;<input type="radio"
+					name="gender"> &nbsp;선택안함&nbsp;<input type="radio" name="gender"
 					checked="checked"></td>
 					<td><div></div></td>
 				</tr>
