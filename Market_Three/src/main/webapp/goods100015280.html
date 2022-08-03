@@ -17,70 +17,9 @@
 	font-family: Jua;
 }
 
-@media ( max-width :767px) {
-	.img {
-		width: 90%;
-		padding: 20px;
-	}
-	.main {
-		padding: 20px 20px 10px 20px;
-		text-align: justify;
-	}
-}
-
-@media ( min-width :768px) {
-	.main {
-		-ms-flex: 0 0 41.666667%;
-		flex: 0 0 41.666667%;
-		max-width: 41.666667%
-	}
-}
-
-@media ( min-width :880px) {
-	.main {
-		-ms-flex: 0 0 41.666667%;
-		flex: 0 0 41.666667%;
-		max-width: 41.666667%
-	}
-}
-
-@media ( min-width :768px) {
-	.img {
-		-ms-flex: 0 0 58.333333%;
-		flex: 0 0 58.333333%;
-		max-width: 58.333333%;
-	}
-}
-
-@media ( min-width :880px) {
-	.imgs {
-		-ms-flex: 0 0 58.333333%;
-		flex: 0 0 58.333333%;
-		max-width: 58.333333%;
-	}
-}
-
-@media ( min-width : 576px) {
-	.body {
-		max-width: 540px;
-	}
-}
-
-@media ( min-width : 768px) {
-	.body {
-		max-width: 880px;
-	}
-}
-
-@media ( min-width : 880px) {
-	.body {
-		max-width: 950px;
-	}
-}
-
-@media ( min-width : 1200px) {
-	.body {
-		max-width: 1100px;
+@media ( max-width : 836px ) {
+	.content {
+		justify-content: center;
 	}
 }
 
@@ -103,15 +42,34 @@
 }
 
 .content {
-	display: -webkit-box;
-	display: -webkit-flex;
-	display: -ms-flexbox;
 	display: flex;
+	margin: auto;
+	max-width: 1050px;
+	min-width: 550px;
 	flex-wrap: wrap;
-	-webkit-box-pack: justify;
-	-webkit-justify-content: space-between;
-	justify-content: space-between;
-	font-family: 'Noto Sans';
+}
+
+.main {
+	max-width: 500px;
+	display: inline-block;
+	flex-grow: 1;
+	min-width: 370px;
+	flex-shrink: 1;
+	flex-basis: 300px;
+}
+
+.img {
+	max-width: 500px;
+	flex-grow: 1;
+	min-width: 370px;
+	flex-shrink: 1;
+	flex-basis: 300px;
+	margin-right: 25px;
+	margin-left: 25px;
+}
+
+#goodsimg {
+	width: 100%;
 }
 
 .title {
@@ -126,27 +84,6 @@
 	-ms-flex-direction: column;
 	flex-direction: column;
 	margin-right: 20px;
-}
-
-.img {
-	max-width: 500px;
-	width: 100%;
-	height: 600px;
-	position: relative;
-	vertical-align: middle;
-	border-style: none;
-	background: url(images/5077478.jpg), url(images/back.jpg) no-repeat 50%
-		50%;
-	-webkit-background-size: cover, contain;
-	background-size: cover, contain;
-	background-color: #f5f5f5;
-	border-style: none;
-	width: 100%;
-}
-
-.main {
-	max-width: 640px;
-	width: 100%;
 }
 
 .list {
@@ -484,7 +421,9 @@ dl {
 	<div id="header"></div>
 	<div class="body">
 		<div class="content">
-			<div class="img"></div>
+			<div class="img">
+				<img alt="굿즈 1" src="images/100015280.png" id="goodsimg">
+			</div>
 			<div class="main">
 				<!-- 상품정보 -->
 				<div class="title">
@@ -495,7 +434,7 @@ dl {
 				<div class="price">
 					<span class="per">31%</span> <span class="prc">17,900</span> <span
 						class="won">원</span>
-					<p style="color : rgb(95, 0, 128);">로그인후, 적립혜택이 제공됩니다.</p>
+					<p style="color: rgb(95, 0, 128);">로그인후, 적립혜택이 제공됩니다.</p>
 				</div>
 				<!-- 상품 상세정보 -->
 				<div>
@@ -521,18 +460,15 @@ dl {
 					<dl class="list">
 						<dt class="term">안내사항</dt>
 						<dd class="description">
-							<p class="description-1">-유효기간: 구매 후 12개월
-							-재 판매 및 양도 불가합니다.
-							-1인 당 10매까지 구매 가능합니다.
-							-부정 사용확인시 임의 취소 될 수 있음을 양해 부탁드립니다.
+							<p class="description-1">-유효기간: 구매 후 12개월 -재 판매 및 양도 불가합니다.
+								-1인 당 10매까지 구매 가능합니다. -부정 사용확인시 임의 취소 될 수 있음을 양해 부탁드립니다.
 						</dd>
 					</dl>
 					<dl class="list">
 						<dt class="term">알레르기정보</dt>
 						<dd class="description">
-							<p class="description-1">1544-3913
-							플레이스엠 고객센터 1544-3913
-							(주중/주말 09:00~18:00, 점심시간 12:00~13:00)
+							<p class="description-1">1544-3913 플레이스엠 고객센터 1544-3913
+								(주중/주말 09:00~18:00, 점심시간 12:00~13:00)
 						</dd>
 					</dl>
 					<dl class="list">
