@@ -82,6 +82,19 @@ td>button {
 	width: 47px;
 	height: 30px;
 }
+
+#sample6_postcode, #sample6_detailAddress{
+	width: 160px;
+}
+#sample6_extraAddress,.sample6{
+	width: 154.5px;
+}
+#sample6_address {
+	width: 320px;
+}
+#sample6_postcode, #sample6_address, #sample6_detailAddress {
+	margin-left: 20px;
+}
 </style>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"
 	integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
@@ -362,10 +375,12 @@ td>button {
 				</tr>
 				<tr>
 					<td><div class="join_name_box">주소</div></td>
-					<td><input class="join_input" placeholder="주소찾기로 주소를 확인해주세요"
-						disabled></td>
-					<td><input type="button" class="adress_button"
-						onclick="sample6_execDaumPostcode()" value="주소찾기"></td>
+					<td class="1111"><input type="text" id="sample6_postcode"
+						placeholder="우편번호" disabled> <input type="button" class="sample6"
+						onclick="sample6_execDaumPostcode()" value="우편번호 찾기"><br>
+						<input type="text" id="sample6_address" placeholder="주소" disabled><br>
+						<input type="text" id="sample6_detailAddress" placeholder="상세주소">
+						<input type="text" id="sample6_extraAddress" placeholder="참고항목" disabled></td>
 				</tr>
 				<tr>
 					<td><div class="join_name_box">성별</div></td>
