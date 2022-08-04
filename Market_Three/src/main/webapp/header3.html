@@ -111,7 +111,7 @@ a:link {
 }
 
 .hitc {
-	width: 150px;
+	width: 250px;
 	min-width: 100px;
 	display: inline-block;
 }
@@ -183,10 +183,10 @@ a:link {
 				</span>
 
 			</div>
-			<div class="hflex-item">
-				<div id="weather">
-					<span></span> <span></span>
-				</div>
+			<div class="hflex-item hitc" >
+				<span id="wimg"></span>
+				<span id="weather"></span> 
+				<span id="city"></span>
 			</div>
 			<div class="hflex-item hitr">
 				<a href="mypage.html"><span style="color: color: rgb(95, 0, 128);">My page</span></a>
@@ -195,8 +195,9 @@ a:link {
 	</div>
 
 	<script type="text/javascript">
-const weather = document.querySelector("#weather span:first-child"); // 나중에 innerText로 날씨정보를 넣어줄 예정
-const city = document.querySelector("#weather span:last-child"); // 나중에 innerText로 지역정보를 넣어줄 예정
+const wimg = document.getElementById("wimg"); // 나중에 innerText로 지역정보를 넣어줄 예정
+const weather = document.querySelector("#weather"); // 나중에 innerText로 날씨정보를 넣어줄 예정
+const city = document.querySelector("#city"); // 나중에 innerText로 지역정보를 넣어줄 예정
 	// span:first-child 자식중 맨처음 span태그를 의미
 	// span:last-child 자식중 맨 마지막 span태그를 의미
 const API_KEY = "85d1f996d059d570380d1cc4c1599be5"; // API의 키를 변수로 저장
@@ -213,10 +214,11 @@ function onGeoOk(position) { // 위치정보를 확인하면 실행할 함수 �
       .then((response) => response.json()) // 응답 객체를 자바 스크립트 객체로 변환
       .then((data) => { 
       city.innerText = data.name; // 지역정보
-      weather.innerText = `${data.weather[0].main} / ${data.main.temp}`+"°C";
+      weather.innerText = `${data.main.temp}`+"°C";
+      const icon = data.weather[0].icon;
+      wimg.innerHTML = "<img style='width:40px; height:40px;' src='images/weather/"+icon+".png'>";
       });	// data.weather[0].main 은 data.name 지역의 날씨 정보를
       		// data.main.temp 은 data.name 지역의 기온 정보를 가져와준다
-      		// innerText는 
   console.log(url);
 }
 function onGeoError() { // 위치 정보 확인 못할때 실행할 함수
