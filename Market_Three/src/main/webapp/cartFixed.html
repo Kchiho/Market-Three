@@ -11,37 +11,40 @@
 	integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
 	crossorigin="anonymous"></script>
 <!-- Font -->
-<link rel="preconnect" href="https://fonts.googleapis.com/%22%3E
-<link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Jua&display=swap" rel="stylesheet">
+<link rel="preconnect"
+	href="https://fonts.googleapis.com/%22%3E
+<link rel="
+	preconnect" href="https://fonts.gstatic.com/" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Jua&display=swap"
+	rel="stylesheet">
 
 <!-- Media -->
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <style type="text/css">
-*{
+* {
 	font-family: 'Jua';
 }
-@media ( max-width: 600px){
+
+@media ( max-width : 600px) {
 	.css-1n2hipb {
 		padding: 50px 0 48px;
 		font-weight: 500;
 		font-size: 14px;
 		line-height: 35px;
 		text-align: center;
-		background-color : #DDDDDD;
-		}
-		
+		background-color: #DDDDDD;
+	}
 	.css-19kxq7d {
 		display: none;
 	}
-	
 	.css-19kxq7d li {
 		display: none;
 	}
 }
+
 @media ( max-width :767px) {
-	.css-8wfj4z  {
+	.css-8wfj4z {
 		width: 90%;
 		padding: 20px;
 	}
@@ -84,28 +87,29 @@
 }
 
 @media ( min-width : 576px) {
-	.css-a6t9xs  {
+	.css-a6t9xs {
 		max-width: 540px;
 	}
 }
 
 @media ( min-width : 768px) {
-	.css-a6t9xs  {
+	.css-a6t9xs {
 		max-width: 100%;
 	}
 }
 
 @media ( min-width : 880px) {
-	.css-a6t9xs  {
+	.css-a6t9xs {
 		max-width: 100%;
 	}
 }
 
 @media ( min-width : 1200px) {
-	.css-a6t9xs  {
+	.css-a6t9xs {
 		max-width: 100%;
 	}
 }
+
 .css-1n2hipb {
 	padding: 50px 0 48px;
 	font-weight: 500;
@@ -113,6 +117,7 @@
 	line-height: 35px;
 	text-align: center;
 }
+
 .css-t79vuj {
 	position: relative;
 	width: 1050px;
@@ -339,11 +344,11 @@
 }
 
 /* adressBox CSS*/
-#sample6_postcode, #sample6_address, #sample6_extraAddress, #sample6_detailAddress{
+#sample6_postcode, #sample6_address, #sample6_extraAddress,
+	#sample6_detailAddress {
 	margin: 10px;
 	width: 240px;
 }
-
 
 .css-1dacand {
 	padding-top: 0;
@@ -488,7 +493,6 @@
 #floatMenu {
 	right: 30px;
 }
-	
 </style>
 
 <!-- floatMenuScript -->
@@ -502,72 +506,89 @@
 </script>
 </head>
 <body>
-<!-- 주소찾기 API -->
-<script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
-<script>
-    function sample6_execDaumPostcode() {
-        new daum.Postcode({
-            oncomplete: function(data) {
-                // 팝업에서 검색결과 항목을 클릭했을때 실행할 코드를 작성하는 부분.
+	<!-- 주소찾기 API -->
+	<script
+		src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+	<script>
+		function sample6_execDaumPostcode() {
+			new daum.Postcode(
+					{
+						oncomplete : function(data) {
+							// 팝업에서 검색결과 항목을 클릭했을때 실행할 코드를 작성하는 부분.
 
-                // 각 주소의 노출 규칙에 따라 주소를 조합한다.
-                // 내려오는 변수가 값이 없는 경우엔 공백('')값을 가지므로, 이를 참고하여 분기 한다.
-                var addr = ''; // 주소 변수
-                var extraAddr = ''; // 참고항목 변수
+							// 각 주소의 노출 규칙에 따라 주소를 조합한다.
+							// 내려오는 변수가 값이 없는 경우엔 공백('')값을 가지므로, 이를 참고하여 분기 한다.
+							var addr = ''; // 주소 변수
+							var extraAddr = ''; // 참고항목 변수
 
-                //사용자가 선택한 주소 타입에 따라 해당 주소 값을 가져온다.
-                if (data.userSelectedType === 'R') { // 사용자가 도로명 주소를 선택했을 경우
-                    addr = data.roadAddress;
-                } else { // 사용자가 지번 주소를 선택했을 경우(J)
-                    addr = data.jibunAddress;
-                }
+							//사용자가 선택한 주소 타입에 따라 해당 주소 값을 가져온다.
+							if (data.userSelectedType === 'R') { // 사용자가 도로명 주소를 선택했을 경우
+								addr = data.roadAddress;
+							} else { // 사용자가 지번 주소를 선택했을 경우(J)
+								addr = data.jibunAddress;
+							}
 
-                // 사용자가 선택한 주소가 도로명 타입일때 참고항목을 조합한다.
-                if(data.userSelectedType === 'R'){
-                    // 법정동명이 있을 경우 추가한다. (법정리는 제외)
-                    // 법정동의 경우 마지막 문자가 "동/로/가"로 끝난다.
-                    if(data.bname !== '' && /[동|로|가]$/g.test(data.bname)){
-                        extraAddr += data.bname;
-                    }
-                    // 건물명이 있고, 공동주택일 경우 추가한다.
-                    if(data.buildingName !== '' && data.apartment === 'Y'){
-                        extraAddr += (extraAddr !== '' ? ', ' + data.buildingName : data.buildingName);
-                    }
-                    // 표시할 참고항목이 있을 경우, 괄호까지 추가한 최종 문자열을 만든다.
-                    if(extraAddr !== ''){
-                        extraAddr = ' (' + extraAddr + ')';
-                    }
-                    // 조합된 참고항목을 해당 필드에 넣는다.
-                    document.getElementById("sample6_extraAddress").value = extraAddr;
-                
-                } else {
-                    document.getElementById("sample6_extraAddress").value = '';
-                }
+							// 사용자가 선택한 주소가 도로명 타입일때 참고항목을 조합한다.
+							if (data.userSelectedType === 'R') {
+								// 법정동명이 있을 경우 추가한다. (법정리는 제외)
+								// 법정동의 경우 마지막 문자가 "동/로/가"로 끝난다.
+								if (data.bname !== ''
+										&& /[동|로|가]$/g.test(data.bname)) {
+									extraAddr += data.bname;
+								}
+								// 건물명이 있고, 공동주택일 경우 추가한다.
+								if (data.buildingName !== ''
+										&& data.apartment === 'Y') {
+									extraAddr += (extraAddr !== '' ? ', '
+											+ data.buildingName
+											: data.buildingName);
+								}
+								// 표시할 참고항목이 있을 경우, 괄호까지 추가한 최종 문자열을 만든다.
+								if (extraAddr !== '') {
+									extraAddr = ' (' + extraAddr + ')';
+								}
+								// 조합된 참고항목을 해당 필드에 넣는다.
+								document.getElementById("sample6_extraAddress").value = extraAddr;
 
-                // 우편번호와 주소 정보를 해당 필드에 넣는다.
-                document.getElementById('sample6_postcode').value = data.zonecode;
-                document.getElementById("sample6_address").value = addr;
-                // 커서를 상세주소 필드로 이동한다.
-                document.getElementById("sample6_detailAddress").focus();
-            }
-        }).open();
-    }
-</script>
+							} else {
+								document.getElementById("sample6_extraAddress").value = '';
+							}
+
+							// 우편번호와 주소 정보를 해당 필드에 넣는다.
+							document.getElementById('sample6_postcode').value = data.zonecode;
+							document.getElementById("sample6_address").value = addr;
+							// 커서를 상세주소 필드로 이동한다.
+							document.getElementById("sample6_detailAddress")
+									.focus();
+						},
+						theme : {
+							bgColor : "#6F42C1", //바탕 배경색
+							searchBgColor : "#FFFFFF", //검색창 배경색
+							contentBgColor : "#FFFFFF" //본문 배경색(검색결과,결과없음,첫화면,검색서제스트)
+						//pageBgColor: "", //페이지 배경색
+						//textColor: "", //기본 글자색
+						//queryTextColor: "", //검색창 글자색
+						//postcodeTextColor: "", //우편번호 글자색
+						//emphTextColor: "", //강조 글자색
+						//outlineColor: "", //테두리
+						}
+					}).open();
+		}
+	</script>
 
 	<div id="header"></div>
 	<div class="css-t79vuj e15sbxqa2">
 		<!-- MyCart -->
 		<div class="css-1n2hipb">
-		<h2>장바구니</h2>
+			<h2>장바구니</h2>
 		</div>
 		<div></div>
 		<div class="css-a6t9xs er0tf673">
 			<div class="css-8wfj4z er0tf672">
 				<div class="css-20o6z0 e149z643">
 					<div class="css-zbxehx e149z642">
-						<label class="css-61d0l5 e1dcessg1"><input
-							type="checkbox"/>전체선택 (0/0)</label>
-							<span class="css-454d5e e149z641"></span>
+						<label class="css-61d0l5 e1dcessg1"><input type="checkbox" />전체선택
+							(0/0)</label> <span class="css-454d5e e149z641"></span>
 						<button class="css-0 e149z640">선택삭제</button>
 					</div>
 				</div>
@@ -576,9 +597,8 @@
 				</div>
 				<div class="css-20o6z0 e149z643">
 					<div class="css-zbxehx e149z642">
-						<label class="css-61d0l5 e1dcessg1"><input
-							type="checkbox"/>전체선택 (0/0)</label>
-							<span class="css-454d5e e149z641"></span>
+						<label class="css-61d0l5 e1dcessg1"><input type="checkbox" />전체선택
+							(0/0)</label> <span class="css-454d5e e149z641"></span>
 						<button class="css-0 e149z640">선택삭제</button>
 					</div>
 				</div>
@@ -596,10 +616,10 @@
 									가능한 상품을 확인하세요!</span>
 							</p>
 							<div class="css-1t6so8j2">
-							<input type="text" id="sample6_postcode" placeholder="우편번호"><br>
-							<input type="text" id="sample6_address" placeholder="주소"><br>
-							<input type="text" id="sample6_extraAddress" placeholder="참고항목"><br>
-							<input type="text" id="sample6_detailAddress" placeholder="상세주소">
+								<input type="text" id="sample6_postcode" placeholder="우편번호"><br>
+								<input type="text" id="sample6_address" placeholder="주소"><br>
+								<input type="text" id="sample6_extraAddress" placeholder="참고항목"><br>
+								<input type="text" id="sample6_detailAddress" placeholder="상세주소">
 							</div>
 							<button class="css-1bh2ea0 e4nu7ef3" type="button" height="36"
 								radius="3" onclick="sample6_execDaumPostcode()">
@@ -653,7 +673,7 @@
 				</div>
 			</div>
 		</div>
-</div>
+	</div>
 	<div id="footer"></div>
 
 </body>
