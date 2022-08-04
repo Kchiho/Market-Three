@@ -29,10 +29,12 @@ div {
 }
 
 .locontent {
-	min-width: 1050px;
+	min-width: 400px;
 	margin-top: 90px;
 	margin-bottom: 60px;
 	background-color: pigmint indigo;
+	margin-left: auto;
+	margin-right: auto;
 }
 
 .login {
@@ -150,6 +152,7 @@ a {
 		$(document).ready(function() {
 			$("#header").load("header3.html");
 			$("#footer").load("footer.html");
+			$("#userid").focus();
 		});
 		
 		function Validation() {
@@ -164,7 +167,7 @@ a {
 			if (userId.value == "") {
 
 				alert("아이디를 입력해주세요");
-
+				$("#userid").focus();
 				return false;
 
 			}
@@ -172,8 +175,8 @@ a {
 
 			if (!RegExp.test(userId.value)) {
 
-				alert("6~12자리 영문대소문자와 숫자로만 입력해주세요");
-
+				$("#userid").focus();
+				alert("아이디는 6~12자리 영문대소문자와 숫자로만 입력해주세요");
 				return false;
 
 			}
@@ -183,7 +186,7 @@ a {
 			if (userPs.value == "") {
 
 				alert("비밀번호가 입력되지 않았습니다.");
-
+				$("#userPs").focus();
 				return false;
 
 			}
@@ -192,8 +195,8 @@ a {
 
 			if (!RegExp.test(userPs.value)) {
 
-				alert("비밀번호를 6~12자리 영문대소문자와 숫자로만 입력해주세요");
-
+				alert("비밀번호는 6~12자리 영문대소문자와 숫자로만 입력해주세요");
+				$("#userPs").focus();
 				return false;
 
 			}
