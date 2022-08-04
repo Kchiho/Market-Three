@@ -22,7 +22,7 @@
 	href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css"
 	rel="stylesheet" />
 <!-- Core theme CSS (includes Bootstrap)-->
-<link href="css/styles.css" rel="stylesheet" />
+
 <link rel="
 	preconnect" href="https://fonts.gstatic.com/" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Jua&display=swap"
@@ -90,6 +90,17 @@ body {
 .swiper-slide.cart {
 	object-fit: cover;
 }
+#star{
+	margin: auto;
+}
+#star a {
+	text-decoration: none;
+	color: gray;
+}
+
+#star a.on {
+	color: rgb(95, 0, 128);
+}
 </style>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"
 	integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
@@ -120,7 +131,7 @@ body {
 				<a href=""> <img class="" src="images/alchole.png" alt="main">
 				</a>
 			</div>
-			
+
 			<div class="swiper-slide">
 				<a href=""> <img class="cart" src="images/cart1.webp" alt="main">
 				</a>
@@ -160,6 +171,13 @@ body {
 								<h5 class="fw-bolder">[미식당] 등심 돈카츠 180g * 2입 (소스포함)</h5>
 								<!-- Product price-->
 								7632 원
+							<P id="star">
+								<!-- 부모 -->
+								<a value="1">★</a>
+								<!-- 자식들-->
+								<a value="2">★</a> <a  value="3">★</a> <a
+									 value="4">★</a> <a  value="5">★</a>
+							<p>
 							</div>
 						</div>
 						<!-- Product actions-->
@@ -186,6 +204,13 @@ body {
 								<!-- Product price-->
 								<span class="text-muted text-decoration-line-through">23,449</span>
 								17,900원
+								<P id="star">
+								<!-- 부모 -->
+								<a value="1">★</a>
+								<!-- 자식들-->
+								<a value="2">★</a> <a  value="3">★</a> <a
+									 value="4">★</a> <a  value="5">★</a>
+							<p>
 							</div>
 						</div>
 						<!-- Product actions-->
@@ -212,6 +237,13 @@ body {
 								<!-- Product price-->
 								<span class="text-muted text-decoration-line-through"></span>
 								1,980원
+								<P id="star">
+								<!-- 부모 -->
+								<a value="1">★</a>
+								<!-- 자식들-->
+								<a value="2">★</a> <a  value="3">★</a> <a
+									 value="4">★</a> <a  value="5">★</a>
+							<p>
 							</div>
 						</div>
 						<!-- Product actions-->
@@ -238,6 +270,13 @@ body {
 								<!-- Product price-->
 								<span class="text-muted text-decoration-line-through">12,100</span>
 								11,000원
+								<P id="star">
+								<!-- 부모 -->
+								<a value="1">★</a>
+								<!-- 자식들-->
+								<a value="2">★</a> <a  value="3">★</a> <a
+									 value="4">★</a> <a  value="5">★</a>
+							<p>
 							</div>
 						</div>
 						<!-- Product actions-->
@@ -265,6 +304,13 @@ body {
 								<!-- Product price-->
 								<span class="text-muted text-decoration-line-through">$50.00</span>
 								$25.00
+								<P id="star">
+								<!-- 부모 -->
+								<a value="1">★</a>
+								<!-- 자식들-->
+								<a value="2">★</a> <a  value="3">★</a> <a
+									 value="4">★</a> <a  value="5">★</a>
+							<p>
 							</div>
 						</div>
 						<!-- Product actions-->
@@ -288,6 +334,13 @@ body {
 								<h5 class="fw-bolder">Fancy Product</h5>
 								<!-- Product price-->
 								$120.00 - $280.00
+								<P id="star">
+								<!-- 부모 -->
+								<a value="1">★</a>
+								<!-- 자식들-->
+								<a value="2">★</a> <a  value="3">★</a> <a
+									 value="4">★</a> <a  value="5">★</a>
+							<p>
 							</div>
 						</div>
 						<!-- Product actions-->
@@ -315,6 +368,13 @@ body {
 								<!-- Product price-->
 								<span class="text-muted text-decoration-line-through">$20.00</span>
 								$18.00
+								<P id="star">
+								<!-- 부모 -->
+								<a value="1">★</a>
+								<!-- 자식들-->
+								<a value="2">★</a> <a  value="3">★</a> <a
+									 value="4">★</a> <a  value="5">★</a>
+							<p>
 							</div>
 						</div>
 						<!-- Product actions-->
@@ -338,6 +398,13 @@ body {
 								<h5 class="fw-bolder">Popular Item</h5>
 								<!-- Product price-->
 								$40.00
+								<P id="star">
+								<!-- 부모 -->
+								<a value="1">★</a>
+								<!-- 자식들-->
+								<a value="2">★</a> <a  value="3">★</a> <a
+									 value="4">★</a> <a  value="5">★</a>
+							<p>
 							</div>
 						</div>
 						<!-- Product actions-->
@@ -358,79 +425,85 @@ body {
 	<script
 		src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 	<!-- Core theme JS-->
-	<script src="js/scripts.js"></script>
 	<!-- Swiper JS -->
 	<script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
 
-<!-- Initialize Swiper -->
+	<!-- Initialize Swiper -->
 	<script>
-	$("document").ready(function () {
-	    // 문서의 dom이 준비되면
-	    // .mySwiper 클래스를 swiper 슬라이더로 만듦
-	    // 이후에 swiper변수에 할당했기 때문에 스크립트로 제어할 수도 있음.
-	    var swiper = new Swiper(".mySwiper", {
-	        slidesPerView: 'auto',
-	        spaceBetween: 80,
-	        loop: true,
+		$("document").ready(
+				function() {
+					// 문서의 dom이 준비되면
+					// .mySwiper 클래스를 swiper 슬라이더로 만듦
+					// 이후에 swiper변수에 할당했기 때문에 스크립트로 제어할 수도 있음.
+					var swiper = new Swiper(".mySwiper", {
+						slidesPerView : 'auto',
+						spaceBetween : 80,
+						loop : true,
 
-	        // pagination 기본은 bullet
-	        pagination: {
-	            el: ".swiper-pagination"
-	        },
+						// pagination 기본은 bullet
+						pagination : {
+							el : ".swiper-pagination"
+						},
 
-	        // 좌우 화살표 navigation element 지정
-	        navigation: {
-	            nextEl: ".swiper-button-next",
-	            prevEl: ".swiper-button-prev"
-	        },
-	        // 반응형
-	        breakpoints: {
-	            // 600px 이하가 되면 슬라이드 간 간격을 0으로
-	            600: {
-	                spaceBetween: 0
-	            },
-	        },
+						// 좌우 화살표 navigation element 지정
+						navigation : {
+							nextEl : ".swiper-button-next",
+							prevEl : ".swiper-button-prev"
+						},
+						// 반응형
+						breakpoints : {
+							// 600px 이하가 되면 슬라이드 간 간격을 0으로
+							600 : {
+								spaceBetween : 0
+							},
+						},
 
-	        on: {
-	            init: function() {
-	                $('.swiper-slide').addClass('changed');
+						on : {
+							init : function() {
+								$('.swiper-slide').addClass('changed');
 
-	                // fraction에 현재 인덱스와 전체 인덱스 표시
-	                // this.loopedSlides는 loop, slidesPerView: 'auto'일 때 제대로 동작
-	                $('.custom-fraction .current').text(this.realIndex + 1);
-	                $('.custom-fraction .all').text(this.loopedSlides);
-	                // console.log(this);
-	                // console.log(this.loopedSlides)
-	            },
+								// fraction에 현재 인덱스와 전체 인덱스 표시
+								// this.loopedSlides는 loop, slidesPerView: 'auto'일 때 제대로 동작
+								$('.custom-fraction .current').text(
+										this.realIndex + 1);
+								$('.custom-fraction .all').text(
+										this.loopedSlides);
+								// console.log(this);
+								// console.log(this.loopedSlides)
+							},
 
-	            slideChangeTransitionStart: function() {
-	                // 기본적으로 제공하는 swiper-slide-active 클래스를 이용해
-	                // css transition 애니메이션 작성 가능하다.
-	                // 다만 루프 모드일 때에는 루프 픽스를 하며 slide를 바꿔치기를 하는데,
-	                // 이 때 플리커링이 발생할 수 있다.
-	                // css transition을 서로 다르게 설정한 changed, changing 클래스를 이용
-	                $('.swiper-slide').addClass('changing');
-	                $('.swiper-slide').removeClass('changed');
+							slideChangeTransitionStart : function() {
+								// 기본적으로 제공하는 swiper-slide-active 클래스를 이용해
+								// css transition 애니메이션 작성 가능하다.
+								// 다만 루프 모드일 때에는 루프 픽스를 하며 slide를 바꿔치기를 하는데,
+								// 이 때 플리커링이 발생할 수 있다.
+								// css transition을 서로 다르게 설정한 changed, changing 클래스를 이용
+								$('.swiper-slide').addClass('changing');
+								$('.swiper-slide').removeClass('changed');
 
-	                // 페이지 넘어갈 때마다 fraction 현재 인덱스 변경
-	                $('.custom-fraction .current').text(this.realIndex + 1);
-	            },
+								// 페이지 넘어갈 때마다 fraction 현재 인덱스 변경
+								$('.custom-fraction .current').text(
+										this.realIndex + 1);
+							},
 
-	            slideChangeTransitionEnd: function() {
-	                // changing : transition O
-	                // changed : transition X
-	                $('.swiper-slide').removeClass('changing');
-	                $('.swiper-slide').addClass('changed');
-	            }
-	        },
-	     		autoplay: {     //자동슬라이드 (false-비활성화)      
-	    	    delay: 2000, // 시간 설정       
-	    	  	disableOnInteraction: false, // false-스와이프 후 자동 재생        
-	    	},
-	    });
+							slideChangeTransitionEnd : function() {
+								// changing : transition O
+								// changed : transition X
+								$('.swiper-slide').removeClass('changing');
+								$('.swiper-slide').addClass('changed');
+							}
+						},
+						autoplay : { //자동슬라이드 (false-비활성화)      
+							delay : 2000, // 시간 설정       
+							disableOnInteraction : false, // false-스와이프 후 자동 재생        
+						},
+					});
 
-	 });
-
+				});
+		$('#star a').click(function() {
+			$(this).parent().children("a").removeClass("on");
+			$(this).addClass("on").prevAll("a").addClass("on");
+		});
 	</script>
 </body>
 </html>
