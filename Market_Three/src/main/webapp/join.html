@@ -107,6 +107,7 @@ td>button {
 		$(document).ready(function() {
 			$("#header").load("header3.html");
 			$("#footer").load("footer.html");
+			$("#userid").focus();
 		});
 		function Validation() {
 
@@ -135,13 +136,15 @@ td>button {
 			var userBr = document.getElementById("birth");
 
 			var userh = document.getElementById("userh");
+			
+			var userad = document.getElementById("sample6_postcode");
 
 			// 아이디에 아무것도 안들어가있을 경우
 
 			if (userId.value == "") {
 
 				alert("아이디를 입력해주세요");
-
+				$("#userid").focus();
 				return false;
 
 			}
@@ -149,8 +152,8 @@ td>button {
 
 			if (!RegExp.test(userId.value)) {
 
-				alert("6~12자리 영문대소문자와 숫자로만 입력해주세요");
-
+				alert("아이디는 6~12자리 영문대소문자와 숫자로만 입력해주세요");
+				$("#userid").focus();
 				return false;
 
 			}
@@ -159,7 +162,7 @@ td>button {
 			if (userId.value == userPs.value) {
 
 				alert("아이디와 비밀번호가 같습니다.");
-
+				$("#userPs").focus();
 				return false;
 
 			}
@@ -171,7 +174,7 @@ td>button {
 			if (userPs.value == "") {
 
 				alert("비밀번호가 입력되지 않았습니다.");
-
+				$("#userPs").focus();
 				return false;
 
 			}
@@ -181,7 +184,7 @@ td>button {
 			if (!RegExp.test(userPs.value)) {
 
 				alert("비밀번호를 6~12자리 영문대소문자와 숫자로만 입력해주세요");
-
+				$("#userPs").focus();
 				return false;
 
 			}
@@ -191,7 +194,7 @@ td>button {
 			if (userId.value == userPc.value) {
 
 				alert("아이디와 비밀번호 확인이 같습니다.");
-
+				$("#userPc").focus();
 				return false;
 
 			}
@@ -201,7 +204,7 @@ td>button {
 			if (userPc.value == "") {
 
 				alert("비밀번호 확인이 입력되지 않았습니다.");
-
+				$("#userPc").focus();
 				return false;
 
 			}
@@ -211,9 +214,15 @@ td>button {
 			if (!RegExp.test(userPc.value)) {
 
 				alert("비밀번호 확인을 6~12자리 영문대소문자와 숫자로만 입력해주세요");
-
+				$("#userPc").focus();
 				return false;
 
+			}
+			
+			if (!(userPs.value==userPc.value)){
+				alert("비밀번호가 비밀번호 확인과 일치하지 않습니다");
+				$("#userPc").focus();
+				return false;
 			}
 
 			//===========================================================
@@ -223,7 +232,7 @@ td>button {
 			if (nameExp.test(userN.value) == false) {
 
 				alert("이름형식이 맞지 않습니다.");
-
+				$("#usern").focus();
 				return false;
 
 			}
@@ -232,7 +241,7 @@ td>button {
 			if (exptext.test(userM.value) == false) {
 
 				alert("이메일형식이 맞지 않습니다.");
-
+				$("#userm").focus();
 				return false;
 
 			}
@@ -241,35 +250,40 @@ td>button {
 			if (userh.value == "") {
 
 				alert("전화번호가 입력되지 않았습니다.");
-
+				$("#userh").focus();
 				return false;
 			}
 			if (phoneExp.test(userh.value) == false) {
 
 				alert("전화번호 형식이 맞지 않습니다.");
-
+				$("#userh").focus();
 				return false;
 			}
+			if (userad.value == "") {
 
+				alert("우편번호가 입력되지 않았습니다.");
+				$("#sample6_postcode").focus();
+				return false;
+			}
 			// 년도 
 
 			if (BrExp.test(userBr.value) == false) {
 
 				alert("년도 형식이 맞지 않습니다.");
-
+				$("#birth").focus();
 				return false;
 			}
 
 			if (userBr.value == "") {
 
 				alert("년도가 입력되지 않았습니다.");
-
+				$("#birth").focus();
 				return false;
 			}
 			if (!("1900" <= userBr.value && userBr.value <= "2022")) {
 
 				alert("년도는 1900~2022 사이의 값을 입력해주세요");
-
+				$("#birth").focus();
 				return false;
 			}
 
@@ -350,37 +364,37 @@ td>button {
 			<table id="join_table">
 				<tr>
 					<td><div class="join_name_box">아이디</div></td>
-					<td><input class="join_input" id="userid"
+					<td><input class="join_input" id="userid" required
 						placeholder="6~12자리 영문 혹은 영문과 숫자를 조합"></td>
 					<td><div></div></td>
 				</tr>
 				<tr>
 					<td><div class="join_name_box">비밀번호</div></td>
-					<td><input type="password" class="join_input" id="userPs"
+					<td><input type="password" class="join_input" id="userPs" required
 						placeholder="비밀번호를 입력해주세요"></td>
 					<td><div></div></td>
 				</tr>
 				<tr>
 					<td><div class="join_name_box">비밀번호 확인</div></td>
-					<td><input type="password" class="join_input" id="userPc"
+					<td><input type="password" class="join_input" id="userPc" required
 						placeholder="비밀번호를 한번 더 입력해주세요"></td>
 					<td><div></div></td>
 				</tr>
 				<tr>
 					<td><div class="join_name_box">이름</div></td>
-					<td><input class="join_input" id="usern"
+					<td><input class="join_input" id="usern" required
 						placeholder="이름을 입력해주세요"></td>
 					<td><div></div></td>
 				</tr>
 				<tr>
 					<td><div class="join_name_box">이메일</div></td>
-					<td><input class="join_input" id="userm"
+					<td><input class="join_input" id="userm" required
 						placeholder="예: marketthree@three.com"></td>
 					<td></td>
 				</tr>
 				<tr>
 					<td><div class="join_name_box">휴대폰</div></td>
-					<td><input class="join_input" id="userh"
+					<td><input class="join_input" id="userh" required
 						placeholder="예: 010-0000-0000"></td>
 					<td><div></div></td>
 				</tr>
@@ -403,7 +417,7 @@ td>button {
 				</tr>
 				<tr>
 					<td><div class="join_name_box">생년월일</div></td>
-					<td><input type="text" id="birth" placeholder="4자리입력" />
+					<td><input type="text" id="birth" placeholder="4자리입력" required/>
 						년&nbsp; <select class="mmdd">
 
 							<option value="1">1</option>
