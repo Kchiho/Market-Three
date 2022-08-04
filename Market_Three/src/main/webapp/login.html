@@ -3,16 +3,18 @@
 <head>
 <link rel="preconnect" href="https://fonts.googleapis.com/%22%3E
 <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Hi+Melody&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Jua&display=swap" rel="stylesheet">
 <meta charset="UTF-8">
 <title>MarketThree :: 내일의 장보기, MarketThree</title>
+<link rel="icon" type="image/x-icon" href="images/faviconPP.jpg" />
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"
 	integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
 	crossorigin="anonymous"></script>
 <style type="text/css">
 * {
-    font-family: Jua;
+	font-family: Jua;
 }
+
 div {
 	display: block;
 }
@@ -27,10 +29,12 @@ div {
 }
 
 .locontent {
-	min-width: 1050px;
+	min-width: 400px;
 	margin-top: 90px;
 	margin-bottom: 60px;
-	background-color:pigmint indigo;
+	background-color: pigmint indigo;
+	margin-left: auto;
+	margin-right: auto;
 }
 
 .login {
@@ -148,23 +152,71 @@ a {
 		$(document).ready(function() {
 			$("#header").load("header3.html");
 			$("#footer").load("footer.html");
+			$("#userid").focus();
 		});
+		
+		function Validation() {
+			var RegExp = /^[a-zA-Z0-9]{6,12}$/; // 아이디 유효성 검사
+
+			var userId = document.getElementById("userid");
+
+			var userPs = document.getElementById("userPs");
+
+			// 아이디에 아무것도 안들어가있을 경우
+
+			if (userId.value == "") {
+
+				alert("아이디를 입력해주세요");
+				$("#userid").focus();
+				return false;
+
+			}
+			// 아이디가 6자리 영문대소문자와 숫자로만 입력
+
+			if (!RegExp.test(userId.value)) {
+
+				$("#userid").focus();
+				alert("아이디는 6~12자리 영문대소문자와 숫자로만 입력해주세요");
+				return false;
+
+			}
+
+			//password가 입력되지 않을 경우
+
+			if (userPs.value == "") {
+
+				alert("비밀번호가 입력되지 않았습니다.");
+				$("#userPs").focus();
+				return false;
+
+			}
+
+			//password 6~12자리 영문대소문자와 숫자로만 입력
+
+			if (!RegExp.test(userPs.value)) {
+
+				alert("비밀번호는 6~12자리 영문대소문자와 숫자로만 입력해주세요");
+				$("#userPs").focus();
+				return false;
+
+			}
+		}
 	</script>
 	<div id="header"></div>
 	<div class="locontent">
 		<div class="login">로그인</div>
 		<div class="lomain">
-			<form>
+			<form action="MTmain.html" onsubmit="return Validation();" method="post">
 				<div class="idpw">
 					<div class="id-box">
 						<div class="loidpw">
-							<input data-testid="input-box" name="id"
+							<input data-testid="input-box" id="userid"
 								placeholder="아이디를 입력해주세요" type="text" class="lidpw" value="">
 						</div>
 					</div>
 					<div class="pw-box">
 						<div class="loidpw">
-							<input data-testid="input-box" name="password"
+							<input data-testid="input-box" id="userPs"
 								placeholder="비밀번호를 입력해주세요" type="password" class="lidpw"
 								value="">
 						</div>
@@ -178,7 +230,8 @@ a {
 					<button class="bt-id" type="submit" height="54" radius="3">
 						<span class="btn-idpw">로그인</span>
 					</button>
-					<button class="bt-pw" type="button" height="54" radius="3" onclick="location.href='join.html'">
+					<button class="bt-pw" type="button" height="54" radius="3"
+						onclick="location.href='join.html'">
 						<span class="btn-idpw">회원가입</span>
 					</button>
 				</div>
