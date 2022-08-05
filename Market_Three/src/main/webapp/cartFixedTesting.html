@@ -141,8 +141,9 @@
 }
 
 .css-1dta0ch {
-	height: 600px;
-	width: 290px;
+	position: relative;
+	width: 284px;
+	min-height: 942px;
 }
 
 .css-50ad8x {
@@ -265,6 +266,13 @@
 	padding: 19px 18px 18px 20px;
 	border: 1px solid #f2f2f2;
 	background-color: #fafafa;
+}
+
+/* adressBox CSS*/
+#sample6_postcode, #sample6_address, #sample6_extraAddress,
+	#sample6_detailAddress {
+	margin: 10px;
+	width: 240px;
 }
 
 .css-1dacand {
@@ -528,6 +536,12 @@
 								<em>배송지를 등록</em>하고<br /> <span class="css-1bmnxg7 e1321nl40">구매
 									가능한 상품을 확인하세요!</span>
 							</p>
+							<div class="css-1t6so8j2">
+								<input type="text" id="sample6_postcode" placeholder="우편번호"><br>
+								<input type="text" id="sample6_address" placeholder="주소"><br>
+								<input type="text" id="sample6_extraAddress" placeholder="참고항목"><br>
+								<input type="text" id="sample6_detailAddress" placeholder="상세주소">
+							</div>
 							<button class="css-1bh2ea0 e4nu7ef3" type="button" height="36"
 								radius="3" onclick="sample6_execDaumPostcode()">
 								<span class="css-ymwvow e4nu7ef1"> 주소 검색</span>
@@ -580,7 +594,7 @@
 				</div>
 			</div>
 		</div>
-</div>
+	</div>
 	<div id="footer"></div>
 
 </body>
